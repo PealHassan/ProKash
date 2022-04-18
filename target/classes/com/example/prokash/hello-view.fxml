@@ -220,6 +220,9 @@
                   <Font size="20.0" />
                </font>
             </JFXButton>
+            <Label layoutX="22.0" layoutY="171.0" text="Label" />
+            <Label layoutX="50.0" layoutY="14.0" text="Label" />
+            <Label layoutX="273.0" layoutY="87.0" text="something wrong" textFill="#ff0303" visible="false" />
          </children>
       </AnchorPane>
    </children>
