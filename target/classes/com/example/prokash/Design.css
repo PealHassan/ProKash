@@ -1,0 +1,23 @@
+.combo-box  .list-cell {
+    -fx-text-fill: "#ffffff";
+
+}
+.combo-box  .list-view .list-cell {
+    -fx-text-fill: "#ffffff";
+    -fx-background-color: "#000000";
+    -fx-border-color: "#ffffff";
+}
+.date-picker {
+    -fx-background-color: "#1F2D3A";
+}
+.date-picker > .text-field {
+    -fx-background-color: "#1F2D3A";
+    -fx-border-color: "#ffffff";
+    -fx-text-fill: "#ffffff";
+    -fx-border-radius: 20px;
+}
+.date-picker > .arrow-button {
+    -fx-border-radius: 50px;
+    -fx-border-color: "#ffffff";
+    -fx-background-color: "#1F2D3A";
+}

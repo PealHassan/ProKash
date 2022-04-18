@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #212F3D;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prokash.HelloController">
+   <children>
+      <ImageView fitHeight="96.0" fitWidth="348.0" layoutX="258.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="362.0" layoutY="398.0" prefHeight="40.0" prefWidth="144.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Log In" textFill="WHITE" />
+      <JFXButton layoutX="201.0" layoutY="594.0" onAction="#SignUp" prefHeight="40.0" prefWidth="223.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px;" text="Sign Up" textFill="#fff2f2" />
+      <JFXButton layoutX="453.0" layoutY="594.0" prefHeight="40.0" prefWidth="251.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px;" text="Forget Password" textFill="#f4f0f0" />
+      <TextField alignment="CENTER" layoutX="297.0" layoutY="234.0" prefHeight="40.0" prefWidth="274.0" promptText="Account Id" style="-fx-background-color: #212F3D; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="295.0" layoutY="318.0" prefHeight="40.0" prefWidth="274.0" promptText="Password" style="-fx-background-color: #212F3D; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="378.0" layoutY="205.0" text="Account Id is missing" textFill="#f40000" visible="false" />
+      <Label layoutX="382.0" layoutY="293.0" text="Password is missing" textFill="#f40000" visible="false" />
+      <Label layoutX="348.0" layoutY="526.0" text="Username or Password is Wrong" textFill="#f40000" visible="false" />
+      <AnchorPane id="SignUpForm1" fx:id="AnchorPaneSignUpForm1" layoutX="-1.0" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1F2D3A;" stylesheets="@Design.css">
+         <children>
+            <TextField fx:id="firstname" alignment="CENTER" layoutX="217.0" layoutY="153.0" prefHeight="34.0" prefWidth="298.0" promptText="First Name" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="lastname" alignment="CENTER" layoutX="549.0" layoutY="153.0" prefHeight="34.0" prefWidth="305.0" promptText="Last Name" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="email" alignment="CENTER" layoutX="217.0" layoutY="280.0" prefHeight="34.0" prefWidth="298.0" promptText="Email" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="fathername" alignment="CENTER" layoutX="548.0" layoutY="215.0" prefHeight="34.0" prefWidth="306.0" promptText="Father's Name" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mothername" alignment="CENTER" layoutX="217.0" layoutY="215.0" prefHeight="34.0" prefWidth="298.0" promptText="Mother's Name" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="religion" alignment="CENTER" layoutX="217.0" layoutY="344.0" prefHeight="36.0" prefWidth="298.0" promptText="Religion" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="phonenumber" alignment="CENTER" layoutX="552.0" layoutY="345.0" prefHeight="34.0" prefWidth="306.0" promptText="Phone Number" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="46.0" fitWidth="212.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="57.0" layoutY="114.0" text="Personal Information" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="gender" layoutX="549.0" layoutY="413.0" prefHeight="36.0" prefWidth="306.0" promptText="Gender" style="-fx-background-color: #1F2D3A; -fx-text-fill: #ffffff; -fx-border-color: #ffffff; -fx-border-radius: 20px;">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Male" />
+                     <String fx:value="Female" />
+                     <String fx:value="Custom" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <DatePicker fx:id="dateofbirth" layoutX="217.0" layoutY="490.0" prefHeight="36.0" prefWidth="600.0" promptText="Date of Birth" />
+            <ComboBox fx:id="maritalstatus" layoutX="215.0" layoutY="413.0" prefHeight="36.0" prefWidth="298.0" promptText="Marital Status" style="-fx-background-color: #1F2D3A; -fx-text-fill: #ffffff; -fx-border-color: #ffffff; -fx-border-radius: 20px;">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Married" />
+                     <String fx:value="Unmarried" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <JFXButton layoutX="88.0" layoutY="602.0" onAction="#BackFromSignUpForm1ToLogIn" prefHeight="54.0" prefWidth="201.0" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px;" text="Back" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="659.0" layoutY="603.0" onAction="#NextToSignUpForm1ToSignUpForm2" prefHeight="54.0" prefWidth="201.0" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="nationality" alignment="CENTER" layoutX="552.0" layoutY="280.0" prefHeight="34.0" prefWidth="298.0" promptText="Nationality" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="74.0" layoutY="104.0" text="Personal Details" textFill="#fffbfb">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Line endX="571.7999877929688" endY="-7.62939453125E-6" layoutX="297.0" layoutY="114.0" startX="-100.0" stroke="#a6a6a6" />
+            <Label layoutX="414.0" layoutY="60.0" text="Sign Up Form" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            
+         </children>
+      </AnchorPane>
+      <AnchorPane id="SignUpForm2" fx:id="AnchorPaneSignUpForm2" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1F2D3A;" stylesheets="@Design.css">
+         <children>
+            <Label layoutX="84.0" layoutY="121.0" prefHeight="20.0" prefWidth="112.0" text="Address" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="212.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="403.0" layoutY="60.0" text=" Sign Up Form" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="postoffice" alignment="CENTER" layoutX="165.0" layoutY="179.0" prefHeight="34.0" prefWidth="237.0" promptText="Post Office" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Line endX="602.2000122070312" layoutX="288.0" layoutY="132.0" startX="-122.40000915527344" stroke="#a6a6a6" />
+            <TextField fx:id="district" alignment="CENTER" layoutX="165.0" layoutY="234.0" prefHeight="34.0" prefWidth="334.0" promptText="District" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="state" alignment="CENTER" layoutX="412.0" layoutY="179.0" prefHeight="34.0" prefWidth="223.0" promptText="State" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="city" alignment="CENTER" layoutX="640.0" layoutY="179.0" prefHeight="34.0" prefWidth="238.0" promptText="City" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="postalcode" alignment="CENTER" layoutX="543.0" layoutY="232.0" prefHeight="36.0" prefWidth="334.0" promptText="Postal Code" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="84.0" layoutY="307.0" text="Additional Details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Line endX="555.7999877929688" layoutX="332.0" layoutY="318.0" startX="-100.0" stroke="#a6a6a6" />
+            <TextField fx:id="nid" alignment="CENTER" layoutX="164.0" layoutY="350.0" prefHeight="34.0" prefWidth="723.0" promptText="NID" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="income" layoutX="165.0" layoutY="405.0" prefHeight="34.0" prefWidth="358.0" promptText="Income" style="-fx-background-color: #1F2D3A; -fx-text-fill: #ffffff; -fx-border-color: #ffffff; -fx-border-radius: 20px;">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="up to 5000 BDT" />
+                     <String fx:value="up to 10000 BDT" />
+                     <String fx:value="up to 25000 BDT" />
+                     <String fx:value="up to 50000 BDT" />
+                     <String fx:value="up to 100000 BDT" />
+                     <String fx:value="More than 100000 BDT" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <TextField fx:id="occupation" alignment="CENTER" layoutX="539.0" layoutY="406.0" prefHeight="36.0" prefWidth="348.0" promptText="Occupation" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="84.0" layoutY="466.0" text="Set Password" textFill="#fffafa">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Line endX="591.7999877929688" endY="3.0517578125E-5" layoutX="297.0" layoutY="477.0" startX="-100.0" stroke="#a6a6a6" />
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="178.0" layoutY="521.0" prefHeight="40.0" prefWidth="323.0" promptText="Password" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;" />
+            <PasswordField fx:id="confirmpassword" alignment="CENTER" layoutX="539.0" layoutY="521.0" prefHeight="40.0" prefWidth="323.0" promptText="Confirm Password" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;" />
+            <JFXButton layoutX="84.0" layoutY="601.0" onAction="#BackFromSignUpForm2ToSignUpForm1" prefHeight="54.0" prefWidth="201.0" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px;" text="Back" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="606.0" layoutY="598.0" onAction="#save" prefHeight="54.0" prefWidth="238.0" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px;" text="Sign Up" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="22.0" layoutY="171.0" text="Label" />
+            <Label layoutX="50.0" layoutY="14.0" text="Label" />
+            <Label layoutX="273.0" layoutY="87.0" text="something wrong" textFill="#ff0303" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
