@@ -1,10 +1,11 @@
+package com.example.prokash;
 
 
-
-public class Main {
+public class Validation {
 
     static boolean CheckAllChatecterWithSpace(String s1){
         int n= s1.length();
+        if(n == 0) return false;
         for(int i=0;i<n;i++)
         {
             char a = s1.charAt(i);
@@ -26,8 +27,9 @@ public class Main {
     }
 
 
-    static boolean CheckAllChatecter(String s1){
+    static boolean CheckAllChatecterWithouSpace(String s1){
         int n= s1.length();
+        if(n == 0) return  false;
         for(int i=0;i<n;i++)
         {
             char a = s1.charAt(i);
