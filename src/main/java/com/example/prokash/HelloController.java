@@ -3,15 +3,8 @@ package com.example.prokash;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Pair;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class HelloController {
@@ -79,7 +72,6 @@ public class HelloController {
 
 
     private final DatabaseFacilites databaseWork = new DatabaseFacilites();
-    Map<String,String> data = new HashMap<String, String>();
 
     public void SignUp() {
         AnchorPaneSignUpForm1.setVisible(true);
@@ -96,122 +88,14 @@ public class HelloController {
         AnchorPaneSignUpForm1.setVisible(true);
     }
     public void save()  {
-          data = this.CreateMap();
-          Validation validation = new Validation();
-          int validationFlag=1;
-          if(  validation.CheckAllChatecterWithSpace(firstname.getText())  ==  false)
-          {
-                validationFlag=0;
-                showingError.changeStyle(firstname);
-          }
-          if(  validation.CheckAllChatecterWithSpace(lastname.getText())  ==  false)
-          {
-              validationFlag=0;
-              showingError.changeStyle(lastname);
-          }
-
-        if(  validation.CheckAllChatecterWithSpace(mothername.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(mothername);
-
-        }
-
-        if(  validation.CheckAllChatecterWithSpace(fathername.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(fathername);
-        }
-
-        if(  validation.CheckAllChatecterWithoutSpace(nationality.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(nationality);
-        }
-
-        if(  validation.CheckValidPhoneNumber(phonenumber.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(phonenumber);
-        }
-
-        if(  validation.CheckAllChatecterWithSpace(postoffice.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(postoffice);
-        }
-
-        if(  validation.CheckAllChatecterWithSpace(city.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(city);
-        }
-
-
-        if(  validation.CheckAllChatecterWithSpace(district.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(district);
-        }
-
-        if(  validation.CheckValidPostalCode(postalcode.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(postalcode);
-        }
-
-
-        if(  validation.CheckAllChatecterWithSpace(occupation.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(occupation);
-        }
-        if(  validation.CheckValidNid(nid.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(nid);
-        }
-
-
-        if(  validation.CheckTwoStringEqual(password.getText(),confirmpassword.getText())  ==  false)
-        {
-            validationFlag=0;
-            showingError.changeStyle(password);
-            showingError.changeStyle(confirmpassword);
-        }
-        if(religion.getValue()==null)
-        {
-            validationFlag=0;
-            showingError.changeStyle(religion);
-        }
-        if(maritalstatus.getValue()==null)
-        {
-            validationFlag=0;
-            showingError.changeStyle(maritalstatus);
-        }
-        if(gender.getValue()==null)
-        {
-            validationFlag=0;
-            showingError.changeStyle(gender);
-        }
-
-        if(dateofbirth.getValue()==null)
-        {
-            validationFlag=0;
-            showingError.changeStyle(dateofbirth);
-        }
-
-        if(income.getValue()==null)
-        {
-            validationFlag=0;
-            showingError.changeStyle(income);
-        }
-
-
-
-
-          databaseWork.Insert(data);
+        Validation.valid(firstname, lastname, mothername, fathername, occupation, postoffice, city, district, nationality, phonenumber, postalcode, nid, password, confirmpassword, religion, maritalstatus, gender, dateofbirth, income);
+        if(Validation.validationFlag == 0) return;
+        Map<String,String> data = this.CreateMap();
+        databaseWork.Insert(data);
     }
+
+
+
     public Map<String,String> CreateMap() {
         Map<String,String> tempdata = new HashMap<String, String>();
         tempdata.put("FirstName",firstname.getText());
