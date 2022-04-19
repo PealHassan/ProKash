@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #212F3D;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prokash.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #212F3D;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prokash.HelloController">
    <children>
       <ImageView fitHeight="96.0" fitWidth="348.0" layoutX="258.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -64,7 +64,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="phonenumber" alignment="CENTER" layoutX="552.0" layoutY="345.0" prefHeight="34.0" prefWidth="306.0" promptText="Phone Number" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+            <TextField fx:id="phonenumber" alignment="CENTER" layoutX="597.0" layoutY="345.0" prefHeight="34.0" prefWidth="251.0" promptText="Phone Number" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -135,6 +135,11 @@
                </items>
 
             </ComboBox>
+            <Label layoutX="552.0" layoutY="346.0" prefHeight="18.0" prefWidth="46.0" text="+880" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             
          </children>
       </AnchorPane>
@@ -155,7 +160,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="postoffice" alignment="CENTER" layoutX="165.0" layoutY="179.0" prefHeight="34.0" prefWidth="237.0" promptText="Post Office" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+            <TextField fx:id="postoffice" alignment="CENTER" layoutX="165.0" layoutY="179.0" prefHeight="34.0" prefWidth="334.0" promptText="Post Office" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -166,12 +171,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="state" alignment="CENTER" layoutX="412.0" layoutY="179.0" prefHeight="34.0" prefWidth="223.0" promptText="State" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="city" alignment="CENTER" layoutX="640.0" layoutY="179.0" prefHeight="34.0" prefWidth="238.0" promptText="City" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+            <TextField fx:id="city" alignment="CENTER" layoutX="544.0" layoutY="179.0" prefHeight="34.0" prefWidth="334.0" promptText="City" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -215,8 +215,8 @@
                </font>
             </Label>
             <Line endX="591.7999877929688" endY="3.0517578125E-5" layoutX="297.0" layoutY="477.0" startX="-100.0" stroke="#a6a6a6" />
-            <PasswordField fx:id="password" alignment="CENTER" layoutX="178.0" layoutY="521.0" prefHeight="40.0" prefWidth="323.0" promptText="Password" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;" />
-            <PasswordField fx:id="confirmpassword" alignment="CENTER" layoutX="539.0" layoutY="521.0" prefHeight="40.0" prefWidth="323.0" promptText="Confirm Password" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;" />
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="158.0" layoutY="521.0" prefHeight="40.0" prefWidth="358.0" promptText="Password" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;" />
+            <PasswordField fx:id="confirmpassword" alignment="CENTER" layoutX="539.0" layoutY="521.0" prefHeight="40.0" prefWidth="348.0" promptText="Confirm Password" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;" />
             <JFXButton layoutX="84.0" layoutY="601.0" onAction="#BackFromSignUpForm2ToSignUpForm1" prefHeight="54.0" prefWidth="201.0" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px;" text="Back" textFill="WHITE">
                <font>
                   <Font size="20.0" />
@@ -230,6 +230,7 @@
             <Label layoutX="22.0" layoutY="171.0" text="Label" />
             <Label layoutX="50.0" layoutY="14.0" text="Label" />
             <Label layoutX="273.0" layoutY="87.0" text="something wrong" textFill="#ff0303" visible="false" />
+            <Label layoutX="83.0" layoutY="488.0" text="(Minimum 6 Digits)" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

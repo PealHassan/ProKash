@@ -11,7 +11,6 @@ module com.example.prokash {
     requires eu.hansolo.tilesfx;
     requires com.jfoenix;
     requires java.sql;
-    requires mysql.connector.java;
 
     opens com.example.prokash to javafx.fxml;
     exports com.example.prokash;

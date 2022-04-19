@@ -77,8 +77,7 @@ public class HelloController {
     @FXML
     private ComboBox<String> religion;
 
-    @FXML
-    private TextField state;
+
     private final DatabaseFacilites databaseWork = new DatabaseFacilites();
     Map<String,String> data = new HashMap<String, String>();
 
@@ -99,7 +98,117 @@ public class HelloController {
     public void save()  {
           data = this.CreateMap();
           Validation validation = new Validation();
-          if(validation.CheckAllChatecterWithSpace(firstname.getText()))
+          int validationFlag=1;
+          if(  validation.CheckAllChatecterWithSpace(firstname.getText())  ==  false)
+          {
+                validationFlag=0;
+                showingError.changeStyle(firstname);
+          }
+          if(  validation.CheckAllChatecterWithSpace(lastname.getText())  ==  false)
+          {
+              validationFlag=0;
+              showingError.changeStyle(lastname);
+          }
+
+        if(  validation.CheckAllChatecterWithSpace(mothername.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(mothername);
+
+        }
+
+        if(  validation.CheckAllChatecterWithSpace(fathername.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(fathername);
+        }
+
+        if(  validation.CheckAllChatecterWithoutSpace(nationality.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(nationality);
+        }
+
+        if(  validation.CheckValidPhoneNumber(phonenumber.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(phonenumber);
+        }
+
+        if(  validation.CheckAllChatecterWithSpace(postoffice.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(postoffice);
+        }
+
+        if(  validation.CheckAllChatecterWithSpace(city.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(city);
+        }
+
+
+        if(  validation.CheckAllChatecterWithSpace(district.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(district);
+        }
+
+        if(  validation.CheckValidPostalCode(postalcode.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(postalcode);
+        }
+
+
+        if(  validation.CheckAllChatecterWithSpace(occupation.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(occupation);
+        }
+        if(  validation.CheckValidNid(nid.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(nid);
+        }
+
+
+        if(  validation.CheckTwoStringEqual(password.getText(),confirmpassword.getText())  ==  false)
+        {
+            validationFlag=0;
+            showingError.changeStyle(password);
+            showingError.changeStyle(confirmpassword);
+        }
+        if(religion.getValue()==null)
+        {
+            validationFlag=0;
+            showingError.changeStyle(religion);
+        }
+        if(maritalstatus.getValue()==null)
+        {
+            validationFlag=0;
+            showingError.changeStyle(maritalstatus);
+        }
+        if(gender.getValue()==null)
+        {
+            validationFlag=0;
+            showingError.changeStyle(gender);
+        }
+
+        if(dateofbirth.getValue()==null)
+        {
+            validationFlag=0;
+            showingError.changeStyle(dateofbirth);
+        }
+
+        if(income.getValue()==null)
+        {
+            validationFlag=0;
+            showingError.changeStyle(income);
+        }
+
+
+
 
           databaseWork.Insert(data);
     }
@@ -117,7 +226,6 @@ public class HelloController {
         tempdata.put("Gender",gender.getValue());
         tempdata.put("DataOfBirth", String.valueOf(dateofbirth.getValue()));
         tempdata.put("PostOffice",postoffice.getText());
-        tempdata.put("State",state.getText());
         tempdata.put("City",city.getText());
         tempdata.put("District",district.getText());
         tempdata.put("PostalCode",postalcode.getText());

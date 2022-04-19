@@ -4,8 +4,10 @@
 }
 .combo-box  .list-view .list-cell {
     -fx-text-fill: "#ffffff";
-    -fx-background-color: "#000000";
+    -fx-background-color: "#1F2D3A";
     -fx-border-color: "#ffffff";
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
 }
 .date-picker {
     -fx-background-color: "#1F2D3A";
