@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class HelloController {
     @FXML
@@ -108,6 +110,16 @@ public class HelloController {
         //Insertion in database
         databaseWork.Insert(data);
         signuploadingpane.setVisible(true);
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                signuploadingpane.setVisible(false);
+                AnchorPaneSignUpForm1.setVisible(false);
+                AnchorPaneSignUpForm2.setVisible(false);
+            }
+        };
+        timer.schedule(task,3000);
 //        Thread thread = new Thread();
 //        thread.start();
 
