@@ -10,7 +10,7 @@ public class DatabaseFacilites {
     public Connection getConnection() {
         String databaseName = "Customer";
         String databaseUser = "root";
-        String databasePassword = "kvzoszhhzmP45?";
+        String databasePassword = "database?motherchod";
         String url = "jdbc:mysql://localhost/" + databaseName;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
