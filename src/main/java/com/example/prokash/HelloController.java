@@ -3,7 +3,12 @@ package com.example.prokash;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,8 +75,10 @@ public class HelloController {
     @FXML
     private ComboBox<String> religion;
 
-
+    @FXML
+    private Pane signuploadingpane;
     private final DatabaseFacilites databaseWork = new DatabaseFacilites();
+    private int AccountId = 100000;
 
     public void SignUp() {
         AnchorPaneSignUpForm1.setVisible(true);
@@ -87,17 +94,36 @@ public class HelloController {
         AnchorPaneSignUpForm2.setVisible(false);
         AnchorPaneSignUpForm1.setVisible(true);
     }
-    public void save()  {
-        Validation.valid(firstname, lastname, mothername, fathername, occupation, postoffice, city, district, nationality, phonenumber, postalcode, nid, password, confirmpassword, religion, maritalstatus, gender, dateofbirth, income);
-        if(Validation.validationFlag == 0) return;
+    public void save() throws SQLException{
+       // Data Validation
+        Validation.valid(firstname, lastname, mothername, fathername, occupation, postoffice, city, district, nationality, phonenumber, postalcode, nid, password, confirmpassword, religion, maritalstatus, gender, dateofbirth, income, AnchorPaneSignUpForm1);
+        if(Validation.validationFlag == 0) {
+            Validation.validationFlag = 1;
+            return;
+        }
+        //Account Id Generate
+        AccountId += (databaseWork.NumberOfUsers()+1);
+        //Creating Map of data
         Map<String,String> data = this.CreateMap();
+        //Insertion in database
         databaseWork.Insert(data);
+        signuploadingpane.setVisible(true);
+//        Thread thread = new Thread();
+//        thread.start();
+
+//        while(thread.isAlive()) {
+//            signuploadingpane.setVisible(true);
+//        }
+//        AnchorPaneSignUpForm1.setVisible(false);
+//        AnchorPaneSignUpForm2.setVisible(false);
+//        signuploadingpane.setVisible(false);
     }
 
 
 
     public Map<String,String> CreateMap() {
         Map<String,String> tempdata = new HashMap<String, String>();
+        tempdata.put("AccountId",String.valueOf(AccountId));
         tempdata.put("FirstName",firstname.getText());
         tempdata.put("LastName",lastname.getText());
         tempdata.put("MotherName",mothername.getText());

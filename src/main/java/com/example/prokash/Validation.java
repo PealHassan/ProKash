@@ -4,6 +4,7 @@ package com.example.prokash;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 public class Validation {
     static int validationFlag = 1;
@@ -67,7 +68,7 @@ public class Validation {
         }
         return true;
     }
-    static void valid(TextField firstname, TextField lastname, TextField mothername, TextField fathername, TextField occupation, TextField postoffice, TextField city, TextField district, TextField nationality, TextField phonenumber, TextField postalcode, TextField nid, TextField password, TextField confirmpassword, ComboBox<String> religion, ComboBox<String> maritalstatus, ComboBox<String> gender, DatePicker dateofbirth, ComboBox<String> income) {
+    static void valid(TextField firstname, TextField lastname, TextField mothername, TextField fathername, TextField occupation, TextField postoffice, TextField city, TextField district, TextField nationality, TextField phonenumber, TextField postalcode, TextField nid, TextField password, TextField confirmpassword, ComboBox<String> religion, ComboBox<String> maritalstatus, ComboBox<String> gender, DatePicker dateofbirth, ComboBox<String> income, AnchorPane AnchorPaneSignUpForm1) {
         if(!CheckAllCharacterWithSpace(firstname.getText())) {
             validationFlag=0;
             showingError.changeStyle(firstname);
@@ -139,12 +140,13 @@ public class Validation {
         }
         if(dateofbirth.getValue()==null) {
             validationFlag=0;
-            showingError.changeStyle(dateofbirth);
+            //showingError.changeStyle(AnchorPaneSignUpForm1);
         }
         if(income.getValue()==null) {
             validationFlag=0;
             showingError.changeStyle(income);
         }
+
     }
 
 }

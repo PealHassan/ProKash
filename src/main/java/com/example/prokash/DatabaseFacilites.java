@@ -1,12 +1,10 @@
 package com.example.prokash;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Map;
 
 public class DatabaseFacilites {
-    public Connection databaselink;
+    public Connection databaselink = this.getConnection();
 
 
     public Connection getConnection() {
@@ -23,7 +21,6 @@ public class DatabaseFacilites {
         return databaselink;
     }
     public void Insert(Map<String,String>data) {
-        Connection connectionDatabase = this.getConnection();
 
         String query = "INSERT INTO Demo.UserInformation (";
         int cnt = 0;
@@ -41,11 +38,19 @@ public class DatabaseFacilites {
         }
         query += ")";
         try {
-            Statement statement = connectionDatabase.createStatement();
+            Statement statement = databaselink.createStatement();
             statement.executeUpdate(query);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public int NumberOfUsers() throws SQLException {
+        String query = "SELECT * FROM Demo.UserInformation";
+        Statement statement = databaselink.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        int totaldata = 0;
+        while(resultSet.next()) totaldata++;
+        return totaldata;
     }
 }
