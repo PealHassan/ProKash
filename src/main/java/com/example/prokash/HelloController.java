@@ -117,18 +117,12 @@ public class HelloController {
                 signuploadingpane.setVisible(false);
                 AnchorPaneSignUpForm1.setVisible(false);
                 AnchorPaneSignUpForm2.setVisible(false);
+                timer.cancel();
             }
         };
         timer.schedule(task,3000);
-//        Thread thread = new Thread();
-//        thread.start();
 
-//        while(thread.isAlive()) {
-//            signuploadingpane.setVisible(true);
-//        }
-//        AnchorPaneSignUpForm1.setVisible(false);
-//        AnchorPaneSignUpForm2.setVisible(false);
-//        signuploadingpane.setVisible(false);
+
     }
 
 
