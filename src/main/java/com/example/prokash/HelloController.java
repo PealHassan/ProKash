@@ -114,14 +114,14 @@ public class HelloController {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                signuploadingpane.setVisible(false);
-                AnchorPaneSignUpForm1.setVisible(false);
-                AnchorPaneSignUpForm2.setVisible(false);
                 timer.cancel();
             }
         };
-        timer.schedule(task,3000);
-
+        timer.schedule(task,5000);
+        signuploadingpane.setVisible(false);
+        AnchorPaneSignUpForm1.setVisible(false);
+        AnchorPaneSignUpForm2.setVisible(false);
+        showingError.Refresh(firstname, lastname, mothername, fathername, email,occupation, postoffice, city, district, nationality, phonenumber, postalcode, nid, password, confirmpassword, religion, maritalstatus, gender, dateofbirth, income, AnchorPaneSignUpForm1);
 
     }
 
