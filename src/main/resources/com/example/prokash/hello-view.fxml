@@ -232,12 +232,47 @@
             <Label layoutX="22.0" layoutY="171.0" text="Label" />
             <Label layoutX="273.0" layoutY="87.0" text="something wrong" textFill="#ff0303" visible="false" />
             <Label layoutX="83.0" layoutY="488.0" text="(Minimum 6 Digits)" textFill="WHITE" />
-            <Pane fx:id="signuploadingpane" layoutX="-1.0" layoutY="-1.0" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1E2B37;" visible="false">
+            <Pane id="SignUpLpadingPane" fx:id="signuploadingpane" layoutX="-1.0" layoutY="-1.0" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1E2B37;" visible="false">
                <children>
-                  <ProgressIndicator layoutX="424.0" layoutY="281.0" prefHeight="53.0" prefWidth="66.0" />
-                  <Label contentDisplay="CENTER" layoutX="390.0" layoutY="350.0" prefHeight="21.0" prefWidth="172.0" text="Please Wait " textFill="WHITE">
+                  <ProgressIndicator fx:id="loading" layoutX="416.0" layoutY="279.0" prefHeight="53.0" prefWidth="66.0" />
+                  <Label fx:id="verifydonelabel" alignment="CENTER" contentDisplay="CENTER" layoutY="350.0" prefHeight="34.0" prefWidth="900.0" text="Your Account is Verrified Successfully" textFill="WHITE" visible="false">
                      <font>
                         <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="doneimage" fitHeight="64.0" fitWidth="94.0" layoutX="410.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@Done.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="verifylabel" alignment="CENTER" contentDisplay="CENTER" layoutY="350.0" prefHeight="34.0" prefWidth="900.0" text="Your Account is Verifying ....." textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="gotologinpagebutton" layoutX="323.0" layoutY="465.0" onAction="#Refresh" prefHeight="36.0" prefWidth="238.0" style="-fx-background-color: #1E2B37; -fx-border-color: #ffffff; -fx-border-radius: 20px;" text="Go to Log In Page" textFill="WHITE" visible="false" />
+               </children>
+            </Pane>
+            <Pane id="VerificationCodePane" fx:id="verificationcodepane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1E2B37;" visible="false">
+               <children>
+                  <TextField fx:id="verificationcodetextfield" alignment="CENTER" layoutX="296.0" layoutY="314.0" prefHeight="36.0" prefWidth="334.0" promptText="6 Digit Verification Code" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="verificationcodelabel" layoutX="315.0" layoutY="158.0" text="You have been sent a verification code via" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="verificationcodebutton" layoutX="338.0" layoutY="377.0" onAction="#SendVerificationCode" prefHeight="36.0" prefWidth="238.0" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px;" text="Send Me Verification Code" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="verificationcodeemaillabel" alignment="CENTER" layoutY="191.0" prefHeight="21.0" prefWidth="900.0" text="pealhasan6@gmail.com" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
                </children>
