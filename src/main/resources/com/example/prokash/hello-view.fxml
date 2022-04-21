@@ -251,6 +251,16 @@
                      </font>
                   </Label>
                   <JFXButton fx:id="gotologinpagebutton" layoutX="323.0" layoutY="465.0" onAction="#Refresh" prefHeight="36.0" prefWidth="238.0" style="-fx-background-color: #1E2B37; -fx-border-color: #ffffff; -fx-border-radius: 20px;" text="Go to Log In Page" textFill="WHITE" visible="false" />
+                  <Label fx:id="accountidinformationlabel" alignment="CENTER" contentDisplay="CENTER" layoutY="69.0" prefHeight="27.0" prefWidth="900.0" text="Your Account Id for Prokash has been mailed to " textFill="WHITE" visible="false">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="accountidinformationemaillabel" alignment="CENTER" contentDisplay="CENTER" layoutY="109.0" prefHeight="27.0" prefWidth="900.0" text="Your Account Id for Prokash has been mailed to " textFill="WHITE" visible="false">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane id="VerificationCodePane" fx:id="verificationcodepane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1E2B37;" visible="false">

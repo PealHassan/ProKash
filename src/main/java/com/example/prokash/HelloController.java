@@ -1,7 +1,11 @@
 package com.example.prokash;
 
+import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
@@ -9,10 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public class HelloController {
     @FXML
@@ -36,7 +37,7 @@ public class HelloController {
     private TextField fathername;
 
     @FXML
-    private TextField firstname;
+    private  TextField firstname;
 
     @FXML
     private ComboBox<String> gender;
@@ -76,11 +77,26 @@ public class HelloController {
 
     @FXML
     private ComboBox<String> religion;
+    @FXML
+    private Label verificationcodelabel,verificationcodeemaillabel,accountidinformationlabel,accountidinformationemaillabel;
+    @FXML
+    private JFXButton verificationcodebutton;
+    @FXML
+    private TextField verificationcodetextfield;
+    @FXML
+    private Label verifylabel, verifydonelabel;
+    @FXML
+    private ImageView doneimage;
+    @FXML
+    private ProgressIndicator loading;
+    @FXML
+    private JFXButton gotologinpagebutton;
 
     @FXML
-    private Pane signuploadingpane;
+    private Pane signuploadingpane, verificationcodepane;
     private final DatabaseFacilites databaseWork = new DatabaseFacilites();
-    private int AccountId = 100000;
+    private static int AccountId = 100000;
+    private String verificationcode;
 
     public void SignUp() {
         AnchorPaneSignUpForm1.setVisible(true);
@@ -96,36 +112,16 @@ public class HelloController {
         AnchorPaneSignUpForm2.setVisible(false);
         AnchorPaneSignUpForm1.setVisible(true);
     }
-    public void save() throws SQLException{
-       // Data Validation
-        Validation.valid(firstname, lastname, mothername, fathername, occupation, postoffice, city, district, nationality, phonenumber, postalcode, nid, password, confirmpassword, religion, maritalstatus, gender, dateofbirth, income, AnchorPaneSignUpForm1);
+    public void save() throws Exception {
+        //Data Validation
+        Validation.valid(firstname, lastname, mothername, fathername, email,occupation, postoffice, city, district, nationality, phonenumber, postalcode, nid, password, confirmpassword, religion, maritalstatus, gender, dateofbirth, income, AnchorPaneSignUpForm1);
         if(Validation.validationFlag == 0) {
             Validation.validationFlag = 1;
             return;
         }
-        //Account Id Generate
-        AccountId += (databaseWork.NumberOfUsers()+1);
-        //Creating Map of data
-        Map<String,String> data = this.CreateMap();
-        //Insertion in database
-        databaseWork.Insert(data);
-        signuploadingpane.setVisible(true);
-        Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                timer.cancel();
-            }
-        };
-        timer.schedule(task,5000);
-        signuploadingpane.setVisible(false);
-        AnchorPaneSignUpForm1.setVisible(false);
-        AnchorPaneSignUpForm2.setVisible(false);
-        showingError.Refresh(firstname, lastname, mothername, fathername, email,occupation, postoffice, city, district, nationality, phonenumber, postalcode, nid, password, confirmpassword, religion, maritalstatus, gender, dateofbirth, income, AnchorPaneSignUpForm1);
+        verificationcodepane.setVisible(true);
 
     }
-
-
 
     public Map<String,String> CreateMap() {
         Map<String,String> tempdata = new HashMap<String, String>();
@@ -151,6 +147,111 @@ public class HelloController {
         tempdata.put("Password",password.getText());
         tempdata.put("ConfirmPassword", confirmpassword.getText());
         return  tempdata;
+    }
+    public void SendVerificationCode() throws Exception {
+        int code = (int)(Math.random()*1000000);
+        verificationcode = String.valueOf(code);
+        while(verificationcode.length()<6) verificationcode+="0";
+        verificationcodelabel.setVisible(true);
+        verificationcodeemaillabel.setVisible(true);
+        verificationcodeemaillabel.setText(email.getText());
+        verificationcodebutton.setText("Verify Account");
+        verificationcodebutton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    VerifyAccount();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+        MailFacilities.sendVerificationCode(verificationcode,email.getText());
+    }
+    public void VerifyAccount() throws SQLException {
+
+        if(verificationcodetextfield.getText().equals(verificationcode)) {
+            //Account Id Generate
+            AccountId += (databaseWork.NumberOfUsers()+1);
+            //Creating Map of data
+            Map<String,String> data = this.CreateMap();
+            //Insertion in database
+            databaseWork.Insert(data);
+
+            verificationcodepane.setVisible(false);
+            signuploadingpane.setVisible(true);
+            accountidinformationemaillabel.setText(data.get("Email"));
+            Timer timer = new Timer();
+            TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(0);
+                        accountidinformationemaillabel.setVisible(true);
+                        accountidinformationlabel.setVisible(true);
+                        loading.setVisible(false);
+                        doneimage.setVisible(true);
+                        verifylabel.setVisible(false);
+                        verifydonelabel.setVisible(true);
+                        AnchorPaneSignUpForm1.setVisible(false);
+                        gotologinpagebutton.setVisible(true);
+                        MailFacilities.sendAccountId(String.valueOf(AccountId),firstname.getText()+" "+lastname.getText(),email.getText());
+
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    timer.cancel();
+                }
+            };
+            timer.schedule(task,5000);
+        }
+        else {
+            verificationcodebutton.setText("Send Me Verification Code");
+            showingError.changeStyleError(verificationcodetextfield);
+            verificationcodebutton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    try {
+                        SendVerificationCode();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+            verificationcodelabel.setVisible(false);
+            verificationcodeemaillabel.setVisible(false);
+        }
+
+    }
+    public void Refresh() {
+        gotologinpagebutton.setVisible(false);
+        verifydonelabel.setVisible(false);
+        verifylabel.setVisible(true);
+        doneimage.setVisible(false);
+        loading.setVisible(true);
+        showingError.changeStyleCorrect(verificationcodetextfield);
+        verificationcodetextfield.setText("");
+        verificationcodelabel.setVisible(false);
+        verificationcodebutton.setText("Send Me Verification Code");
+        verificationcodebutton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    SendVerificationCode();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+        verificationcodeemaillabel.setVisible(false);
+        signuploadingpane.setVisible(false);
+        verificationcodepane.setVisible(false);
+        AnchorPaneSignUpForm2.setVisible(false);
+        AnchorPaneSignUpForm1.setVisible(false);
+        accountidinformationemaillabel.setVisible(false);
+        accountidinformationlabel.setVisible(false);
+        showingError.Refresh(firstname, lastname, mothername, fathername, email,occupation, postoffice, city, district, nationality, phonenumber, postalcode, nid, password, confirmpassword, religion, maritalstatus, gender, dateofbirth, income, AnchorPaneSignUpForm1);
+
     }
 
 }

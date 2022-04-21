@@ -11,6 +11,8 @@ module com.example.prokash {
     requires eu.hansolo.tilesfx;
     requires com.jfoenix;
     requires java.sql;
+    requires java.mail;
+    requires java.naming;
 
     opens com.example.prokash to javafx.fxml;
     exports com.example.prokash;

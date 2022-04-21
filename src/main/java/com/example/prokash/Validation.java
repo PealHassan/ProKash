@@ -6,6 +6,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+import java.util.Calendar;
+
 public class Validation {
     static int validationFlag = 1;
     static boolean CheckAllCharacterWithSpace(String s1) {
@@ -68,7 +70,7 @@ public class Validation {
         }
         return true;
     }
-    static void valid(TextField firstname, TextField lastname, TextField mothername, TextField fathername, TextField occupation, TextField postoffice, TextField city, TextField district, TextField nationality, TextField phonenumber, TextField postalcode, TextField nid, TextField password, TextField confirmpassword, ComboBox<String> religion, ComboBox<String> maritalstatus, ComboBox<String> gender, DatePicker dateofbirth, ComboBox<String> income, AnchorPane AnchorPaneSignUpForm1) {
+    static void valid(TextField firstname, TextField lastname, TextField mothername, TextField fathername, TextField email, TextField occupation, TextField postoffice, TextField city, TextField district, TextField nationality, TextField phonenumber, TextField postalcode, TextField nid, TextField password, TextField confirmpassword, ComboBox<String> religion, ComboBox<String> maritalstatus, ComboBox<String> gender, DatePicker dateofbirth, ComboBox<String> income, AnchorPane AnchorPaneSignUpForm1) {
         if(!CheckAllCharacterWithSpace(firstname.getText())) {
             validationFlag=0;
             showingError.changeStyleError(firstname);
@@ -183,6 +185,16 @@ public class Validation {
         }
         else showingError.changeStyleCorrect(income);
 
+        if(!MailFacilities.isAddressValid(email.getText())) {
+            validationFlag = 0;
+            showingError.changeStyleError(email);
+        }
+        else showingError.changeStyleCorrect(email);
+
+    }
+    public static void main(String[] args) {
+        int a = (int)(Math.random()*1000000);
+        System.out.println(a);
     }
 
 

@@ -46,11 +46,11 @@ public class DatabaseFacilites {
         }
     }
     public int NumberOfUsers() throws SQLException {
-        String query = "SELECT * FROM Demo.UserInformation";
+        String query = "SELECT COUNT(AccountId) From Demo.UserInformation";
         Statement statement = databaselink.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         int totaldata = 0;
-        while(resultSet.next()) totaldata++;
+        while(resultSet.next()) totaldata = resultSet.getInt(1);
         return totaldata;
     }
 }

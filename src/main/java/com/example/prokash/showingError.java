@@ -2,6 +2,7 @@ package com.example.prokash;
 
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -18,11 +19,11 @@ public class showingError {
         //textField.setPromptText(textField.getPromptText()+ " Error");
     }
     public static void changeStyleCorrect(TextField textField) {
-        textField.setStyle("-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff; ");
+        textField.setStyle("-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;");
         //textField.setPromptText(textField.getPromptText()+ " Error");
     }
     public static void changeStyleCorrect(ComboBox<String> combobox) {
-        combobox.setStyle("-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;");
+        combobox.setStyle("-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #ff0000");
     }
     public static void changeStyleCorrect(DatePicker datePicker) {
         datePicker.setStyle("-fx-background-color: #1F2D3A; -fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-text-fill: #ffffff; ");
@@ -47,8 +48,29 @@ public class showingError {
        dateofbirth.setValue(null);
        income.setValue(null);
        religion.setValue(null);
-       maritalstatus.setValue(null);
        gender.setValue(null);
+       maritalstatus.setValue(null);
+       showingError.KeepPromptText(income);
+       showingError.KeepPromptText(maritalstatus);
+       showingError.KeepPromptText(gender);
+       showingError.KeepPromptText(religion);
+
+    }
+    static void KeepPromptText(ComboBox<String> comboBox) {
+        String str = comboBox.getPromptText();
+        comboBox.setPromptText(str);
+        comboBox.setButtonCell(new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty) ;
+                if (empty || item == null) {
+                    setText(str);
+                } else {
+                    setText(item);
+                }
+            }
+        });
+
     }
 
 }
