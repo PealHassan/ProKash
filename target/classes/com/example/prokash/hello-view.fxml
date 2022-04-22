@@ -285,6 +285,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
+                  <ProgressIndicator fx:id="verificationcodeprogressindicator" layoutX="431.0" layoutY="369.0" visible="false" />
                </children>
             </Pane>
          </children>

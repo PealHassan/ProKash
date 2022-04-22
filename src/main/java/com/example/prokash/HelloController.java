@@ -88,7 +88,7 @@ public class HelloController {
     @FXML
     private ImageView doneimage;
     @FXML
-    private ProgressIndicator loading;
+    private ProgressIndicator loading,verificationcodeprogressindicator;
     @FXML
     private JFXButton gotologinpagebutton;
 
@@ -149,24 +149,40 @@ public class HelloController {
         return  tempdata;
     }
     public void SendVerificationCode() throws Exception {
+        verificationcodeprogressindicator.setVisible(true);
+        verificationcodebutton.setText("Verify Account");
+        verificationcodebutton.setVisible(false);
         int code = (int)(Math.random()*1000000);
         verificationcode = String.valueOf(code);
         while(verificationcode.length()<6) verificationcode+="0";
-        verificationcodelabel.setVisible(true);
-        verificationcodeemaillabel.setVisible(true);
-        verificationcodeemaillabel.setText(email.getText());
-        verificationcodebutton.setText("Verify Account");
-        verificationcodebutton.setOnAction(new EventHandler<ActionEvent>() {
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
             @Override
-            public void handle(ActionEvent actionEvent) {
+            public void run() {
+
+                verificationcodeprogressindicator.setVisible(false);
+                verificationcodelabel.setVisible(true);
+                verificationcodeemaillabel.setVisible(true);
+                verificationcodeemaillabel.setText(email.getText());
+                verificationcodebutton.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        try {
+                            VerifyAccount();
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                });
+                verificationcodebutton.setVisible(true);
                 try {
-                    VerifyAccount();
-                } catch (SQLException e) {
+                    MailFacilities.sendVerificationCode(verificationcode,email.getText());
+                } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
             }
-        });
-        MailFacilities.sendVerificationCode(verificationcode,email.getText());
+        };
+        timer.schedule(task,5000);
     }
     public void VerifyAccount() throws SQLException {
 
