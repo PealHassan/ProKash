@@ -6,10 +6,26 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import java.util.Calendar;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class Validation {
     static int validationFlag = 1;
+    static boolean checkDepositAmount(String s1) {
+
+        int n = s1.length();
+        if(n == 0) return false;
+        for(int i = 0; i<n; i++)
+            if(!(s1.charAt(i)>='0' && s1.charAt(i)<='9')) return  false;
+        if(Integer.valueOf(s1) <= 0) return  false;
+        return  true;
+    }
+
     static boolean CheckAllCharacterWithSpace(String s1) {
         int n= s1.length();
         if(n == 0) return false;
@@ -60,7 +76,15 @@ public class Validation {
         }
         return true;
     }
-
+    static boolean checkValidAccountId(String s1) {
+        int n = s1.length();
+        if(n!=6) return false;
+        for(int i = 0; i<n; i++) {
+            char a = s1.charAt(i);
+            if(!(a>='0'&& a<='9')) return false;
+        }
+        return true;
+    }
     static boolean CheckValidNid(String s1) {
         int n= s1.length();
         if(n <= 8) return  false;
@@ -192,9 +216,49 @@ public class Validation {
         else showingError.changeStyleCorrect(email);
 
     }
-    public static void main(String[] args) {
-        int a = (int)(Math.random()*1000000);
-        System.out.println(a);
+    public static void main(String[] args) throws SQLException {
+//        Double a = 5.11111111111111;
+//        DecimalFormat df = new DecimalFormat("#.##");
+//        a = Double.valueOf(df.format(a));
+//        System.out.println(df.format(a));
+//        System.out.println(a);
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+//        LocalDateTime now = LocalDateTime.now();
+//        System.out.println(String.valueOf(dtf.format(now)));
+//
+//        Map<String,Double> map = new HashMap<String,Double>();
+//
+//        List<Map.Entry<String, Double>> list = new ArrayList<>(map.entrySet());
+//        list.sort(Map.Entry.comparingByValue());
+//        Map<String, Double> result = new LinkedHashMap<>();
+//        for (Map.Entry<String, Double> entry : list) {
+//            result.put(entry.getKey(), entry.getValue());
+//        }
+//
+//
+//        for(String i: result.keySet()) {
+//            System.out.println(i + " " + result.get(i));
+//        }
+//        Map<String,Double> map = new HashMap<String,Double>();
+//        map.put("kul",30.0);
+//        map.put("kuj",40.0);
+//        for(String i: map.keySet()) {
+//            map.put(i,10.0 + map.get(i));
+//        }
+//        for(String i: map.keySet()) {
+//            System.out.println(i + " " + map.get(i));
+//        }
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd");
+//        LocalDateTime now = LocalDateTime.now();
+//        System.out.println(Integer.valueOf(String.valueOf(dtf.format(now))));
+//        String date = "Ihsan 9mirani";
+//        System.out.println(date.toLowerCase());
+//        String query = "select * from Demo.UserInformation where AccountId = '100001'";
+//        Statement statement = new DatabaseFacilites().getConnection().createStatement();
+//        ResultSet resultSet = statement.executeQuery(query);
+//        resultSet.next();
+//        System.out.println(resultSet.getString("FirstName"));
+        System.out.println(-4%3);
     }
 
 

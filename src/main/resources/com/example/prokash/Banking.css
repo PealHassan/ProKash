@@ -1,0 +1,10 @@
+#bankingbtn:hover {
+    -fx-text-fill: white;
+    -fx-font-size: 25px;
+    -fx-pref-width: 180;
+    -fx-pref-height: 130;
+}
+#bankingactionbtn:hover {
+    -fx-background-color: #1F2D3A;
+    -fx-text-fill: #9E9E9E;
+}

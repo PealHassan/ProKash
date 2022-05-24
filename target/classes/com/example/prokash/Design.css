@@ -23,3 +23,22 @@
     -fx-border-color: "#ffffff";
     -fx-background-color: "#1F2D3A";
 }
+
+#menubtn:hover{
+    -fx-background-color: #1F2D3A;
+    -fx-text-fill: white;
+}
+#menubtn:focused {
+    -fx-background-color: #2A2B42;
+    -fx-text-fill: white;
+}
+#logout:hover {
+    -fx-background-color: #1F2D3A;
+    -fx-text-fill: white;
+}
+
+
+
+
+
+

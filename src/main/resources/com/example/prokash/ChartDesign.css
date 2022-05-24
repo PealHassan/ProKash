@@ -1,0 +1,175 @@
+.chart {
+    -fx-padding: 10px;
+}
+.chart-content {
+    -fx-padding: 30px;
+}
+.chart-plot-background {
+    -fx-background-color: #9E9E9E;
+}
+/*.chart-vertical-grid-lines {*/
+/*    -fx-stroke: red;*/
+/*}*/
+.chart-horizontal-grid-lines {
+    -fx-stroke: #1F2D3A;
+}
+/*.chart-alternative-row-fill {*/
+/*    -fx-fill: white;*/
+/*}*/
+.chart-series-line {
+    -fx-stroke-width: 5px;
+    -fx-effect: null;
+}
+/*.default-color0.chart-series-line {*/
+/*    -fx-stroke: green;*/
+/*}*/
+/*.default-color1.chart-series-line {*/
+/*    -fx-stroke: violet;*/
+/*}*/
+/*.default-color0.chart-line-symbol {*/
+/*    -fx-background-color: white,red;*/
+/*}*/
+/*.default-color1.chart-line-symbol {*/
+/*    -fx-background-color: red,white;*/
+/*}*/
+
+.chart-legend {
+    -fx-background-color: #9E9E9E;
+    -fx-padding: 20px;
+}
+.chart-legend-item-symbol{
+    -fx-background-radius: 20px;
+}
+.axis {
+    -fx-font-size: 1.4em;
+    -fx-tick-label-fill:  #1F2D3A;
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+.axis-label {
+    -fx-text-fill:#1F2D3A;
+}
+.combo-box {
+    -fx-background-color: #9E9E9E;
+    -fx-border-color: #1F2D3A;
+    -fx-border-radius: 20px;
+}
+.combo-box  .list-cell {
+    -fx-text-fill: #1F2D3A
+}
+
+.combo-box  .list-view .list-cell {
+    -fx-text-fill: #9E9E9E;
+    -fx-background-color: #1F2D3A;
+    -fx-border-color: #9E9E9E;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.combo-box .list-view {
+    -fx-background-color:#9E9E9E;
+}
+.combo-box  .list-view .list-cell:hover {
+    -fx-text-fill: #1F2D3A;
+    -fx-background-color:  #9E9E9E;
+    -fx-border-color: #1F2D3A;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.jfx-button:hover {
+    -fx-background-color: #1F2D3A;
+    -fx-text-fill: #9E9E9E;
+}
+/*.tree-table-view .tree-table-row-cell{*/
+/*    -fx-background-color: #9E9E9E;*/
+
+
+
+/*}*/
+/*.tree-table-view .tree-table-row-cell .label{*/
+/*    -fx-text-fill: red;*/
+
+/*}*/
+/*.tree-table-view .tree-table-row-cell:selected {*/
+/*    -fx-background-color: #1F2D3A;*/
+
+
+/*}*/
+/*#redcol {*/
+/*    -fx-text-fill:  #1F2D3A;*/
+/*}*/
+/*#redcol:hover {*/
+/*    -fx-text-fill: #9E9E9E;*/
+/*}*/
+
+
+/*.tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell {*/
+/*    -fx-text-fill: #1F2D3A;*/
+/*}*/
+/*.tree-table-view .column-header{*/
+/*    -fx-background-color: green;*/
+/*    -fx-border-color: red;*/
+/*    -fx-border-width: 5 5 5 5;*/
+
+/*}*/
+/*.tree-table-view .column-header .label {*/
+/*    -fx-text-fill: red;*/
+/*    -fx-font-size: 15px;*/
+/*}*/
+/*.tree-table-view .column-header-background {*/
+/*    -fx-background-color: ;*/
+/*    -fx-border-width: 20 10 20 10;*/
+/*}*/
+/*.tree-table-view .column-header .arrow {*/
+/*    -fx-background-color: pink;*/
+/*}*/
+/*.tree-table-view > .tree-disclosure-node > .arrow {*/
+/*    -fx-background-color: cyan;*/
+/*}*/
+/*!*.tree-table-view .column-header-background .filler*!*/
+/*!*.tree-table-view .column-header-background*!.tree-table-view {*/
+/*                                                  -fx-tree-table-color: blue;*/
+
+/*                                                  !*-fx-tree-table-rippler-color: red;*!*/
+/*                                              }*/
+/*!*.tree-table-view:focused .tree-table-row-cell:selected {*!*/
+/*!*    -fx-background-color: green;*!*/
+/*!*    -fx-tree-table-border-color: red;*!*/
+/*!*}*!*/
+
+/*.tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell {*/
+/*    -fx-text-fill: red;*/
+/*}*/
+.tree-table-view .column-header {
+    -fx-background-color: #9E9E9E;
+    -fx-border-color: #1F2D3A;
+    -fx-border-width: 5 5 5 5;
+
+}
+.tree-table-view .column-header .label {
+    -fx-text-fill: #1F2D3A;
+    -fx-font-size: 15px
+}
+.tree-table-view .column-header-background {
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 10 5 10 5;
+}
+.tree-table-view .tree-table-row-cell {
+    -fx-background-color: #1F2D3A;
+}
+/*.table-view .table-row-cell:hover {*/
+/*    -fx-background-color: blue;*/
+/*    -fx-text-background-color: yellow;*/
+/*}*/
+/*.tree-table-view .column {*/
+/*    -fx-background-size: 500;*/
+/*}*/
+.tree-table-view .column-header .arrow {
+    -fx-background-color:  #1F2D3A;
+}
+/*.tree-table-view > .tree-disclosure-node > .arrow {*/
+/*    -fx-background-color: cyan;*/
+/*}*/
+
+/*.tree-table-view .column-header-background .filler*/
+/*.tree-table-view .column-header-background*/

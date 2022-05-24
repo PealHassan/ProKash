@@ -56,5 +56,14 @@
     </orderEntry>
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="guicedee.services.javax.activation" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MAVEN_REPOSITORY$/org/openjfx/javafx/17.0.1" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

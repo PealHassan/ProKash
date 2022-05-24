@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Prokash">
+    <output-path>$PROJECT_DIR$/out/artifacts/Prokash</output-path>
+    <root id="root">
+      <element id="archive" name="Prokash.jar">
+        <element id="module-output" name="Prokash" />
+      </element>
+    </root>
+  </artifact>
+</component>
