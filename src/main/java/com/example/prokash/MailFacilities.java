@@ -27,8 +27,8 @@ public class MailFacilities {
         properties.put("mail.smtp.host","smtp.gmail.com");
         properties.put("mail.smtp.port","587");
 
-        String myAccountEmail = "joyhassan877@gmail.com";
-        String password = "peal?peal?";
+        String myAccountEmail = "prokash21045@gmail.com";
+        String password = "wkezdrpgjhdxmpsl";
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {

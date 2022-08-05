@@ -222,7 +222,7 @@ public class HelloController  implements Initializable{
         if(verificationcodetextfield.getText().equals(verificationcode)) {
             DatabaseFacilites databaseWork = new DatabaseFacilites();
             //Account Id Generate
-            AccountId += (databaseWork.NumberOfUsers()+1);
+            AccountId =100000 + (databaseWork.NumberOfUsers()+1);
 
             databaseWork.createTransactionsTable(String.valueOf(AccountId));
             //Creating Map of data
