@@ -1,0 +1,183 @@
+#bankingbtn:hover {
+    -fx-text-fill: white;
+    -fx-font-size: 25px;
+    -fx-pref-width: 180;
+    -fx-pref-height: 130;
+}
+#bankingbtn {
+    -fx-background-color: #ff0000;
+    -fx-text-fill: #ffffcc;
+    -fx-font-size: 20px;
+    -fx-background-radius: 20px;
+}
+#bankingactionbtn:hover {
+    -fx-background-color: #ff0000;
+    -fx-text-fill: #ffffcc;
+}
+#bankingactionbtn {
+    -fx-border-color: #ff0000;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+#frontcolor {
+    -fx-background-color: #ffffcc;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+#backcolor {
+    -fx-background-color: #ff0000;
+}
+#paneline {
+    -fx-stroke: #ff0000; // backcolor
+}
+#backtext {
+    -fx-text-fill:  #ff0000; // backcolor
+}
+#fronttext {
+    -fx-text-fill: #ffffcc;
+    -fx-background-color: #ff0000;
+    -fx-background-radius: 20px;
+}
+#inputtext {
+    -fx-text-fill:  #ff0000;
+    -fx-background-color: #ffffcc;
+
+}
+#slidebtn {
+    -fx-text-fill: #ff0000;
+}
+#menubtn {
+    -fx-text-fill: #ff0000;
+}
+#menubtn:hover {
+    -fx-background-color: #ff0000;
+    -fx-text-fill: #ffffcc;
+}
+#revmenubtn {
+    -fx-text-fill: #ffffcc;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-background-color: #ff0000;
+}
+#revmenubtn:hover {
+    -fx-background-color: #ffffcc;
+    -fx-text-fill: #ff0000;
+    -fx-border-color: #ff0000;
+}
+#menubtn:focused {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+#frontpaneline {
+    -fx-stroke: #ffffcc;
+}
+#profilepane {
+    -fx-background-color: #ffffcc;
+    -fx-border-color: #ff0000;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+#adminbtn {
+    -fx-background-color: #ff0000;
+    -fx-border-color: black;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-text-fill: #ffffcc;
+
+}
+#adminbtn:hover {
+    -fx-pref-width: 400;
+    -fx-pref-height: 200;
+}
+.combo-box {
+    -fx-background-color: #ffffcc;
+    -fx-border-color: #ff0000;
+    -fx-border-radius: 20px;
+}
+.combo-box  .list-cell {
+    -fx-text-fill: #ff0000
+}
+
+.combo-box  .list-view .list-cell {
+    -fx-text-fill: #ffffcc;
+    -fx-background-color: #ff0000;
+    -fx-border-color: #ffffcc;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.combo-box .list-view {
+    -fx-background-color:#ffffcc;
+}
+.combo-box  .list-view .list-cell:hover {
+    -fx-text-fill: #ff0000;
+    -fx-background-color:  #ffffcc;
+    -fx-border-color: #ff0000;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.tree-table-view .column-header {
+    -fx-background-color: #ffffcc;
+    -fx-border-color: #ff0000;
+    -fx-border-width: 5 5 5 5;
+
+}
+.tree-table-view .column-header .label {
+    -fx-text-fill: #ff0000;
+    -fx-font-size: 15px
+}
+.tree-table-view .column-header-background {
+    -fx-border-color: #ffffcc;
+    -fx-border-width: 10 5 10 5;
+}
+.tree-table-view .tree-table-row-cell {
+    -fx-background-color: #ff0000;
+}
+/*.table-view .table-row-cell:hover {*/
+/*    -fx-background-color: blue;*/
+/*    -fx-text-background-color: yellow;*/
+/*}*/
+/*.tree-table-view .column {*/
+/*    -fx-background-size: 500;*/
+/*}*/
+.tree-table-view .column-header .arrow {
+    -fx-background-color:  #ff0000;
+}
+.chart-legend {
+    -fx-background-color: #ADB386;
+}
+.data0.chart-pie { -fx-pie-color: turquoise; }
+.data1.chart-pie { -fx-pie-color: aquamarine; }
+.data2.chart-pie { -fx-pie-color: cornflowerblue; }
+.data3.chart-pie { -fx-pie-color: blue; }
+.data4.chart-pie { -fx-pie-color: cadetblue; }
+#adminbtn:focused {
+    -fx-pref-width: 400;
+    -fx-pref-height: 200;
+}
+.table-view .column-header {
+    -fx-background-color: #ffffcc;
+    -fx-border-color: #ff0000;
+    -fx-border-width: 5 5 5 5;
+
+}
+.table-view .column-header .label {
+    -fx-text-fill: #ff0000;
+    -fx-font-size: 15px
+}
+.table-view .column-header-background {
+    -fx-border-color: #ffffcc;
+    -fx-border-width: 10 5 10 5;
+}
+.table-view .tree-table-row-cell {
+    -fx-background-color: #ff0000;
+}
+/*.table-view .table-row-cell:hover {*/
+/*    -fx-background-color: blue;*/
+/*    -fx-text-background-color: yellow;*/
+/*}*/
+/*.tree-table-view .column {*/
+/*    -fx-background-size: 500;*/
+/*}*/
+.table-view .column-header .arrow {
+    -fx-background-color:  #ff0000;
+}

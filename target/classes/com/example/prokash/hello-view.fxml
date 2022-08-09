@@ -16,48 +16,98 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #212F3D;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prokash.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prokash.HelloController">
    <children>
-      <Label alignment="CENTER" layoutX="2.0" layoutY="68.0" prefHeight="118.0" prefWidth="900.0" text="Label" AnchorPane.bottomAnchor="513.6" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="67.99999999999997">
-         <graphic>
-            <ImageView fitHeight="80.0" fitWidth="348.0" pickOnBounds="true" preserveRatio="true" x="259.0" y="76.0">
+      <Pane fx:id="toppane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: transparent;">
+         <children>
+            <ImageView fitHeight="735.0" fitWidth="657.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Logo.png" />
+                  <Image url="@modern-online-banking-vector-20452770.jpg" />
                </image>
-               <viewport>
-                  <Rectangle2D />
-               </viewport>
             </ImageView>
-         </graphic>
-      </Label>
-      <JFXButton layoutX="362.0" layoutY="398.0" onAction="#login" prefHeight="40.0" prefWidth="144.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Log In" textFill="WHITE" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="362.0" AnchorPane.rightAnchor="394.0" />
-      <JFXButton layoutX="201.0" layoutY="594.0" onAction="#SignUp" prefHeight="40.0" prefWidth="223.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px;" text="Sign Up" textFill="#fff2f2" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="201.0" />
-      <JFXButton layoutX="453.0" layoutY="594.0" onAction="#ForgetPassword" prefHeight="40.0" prefWidth="251.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px;" text="Forget Password" textFill="#f4f0f0" AnchorPane.bottomAnchor="66.0" AnchorPane.rightAnchor="195.8" />
-      <PasswordField fx:id="UserPassword" alignment="CENTER" layoutX="300.0" layoutY="311.0" prefHeight="46.0" prefWidth="274.0" promptText="Password" style="-fx-background-color: #212F3D; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;" AnchorPane.bottomAnchor="342.6" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="325.6">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </PasswordField>
-      <TextField fx:id="UserAccountId" alignment="CENTER" layoutX="297.0" layoutY="234.0" prefHeight="40.0" prefWidth="274.0" promptText="Account Id" style="-fx-background-color: #212F3D; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;" AnchorPane.bottomAnchor="419.6" AnchorPane.leftAnchor="297.0" AnchorPane.rightAnchor="328.6">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <Label layoutX="378.0" layoutY="205.0" text="Account Id is missing" textFill="#f40000" visible="false" />
-      <Label layoutX="382.0" layoutY="293.0" text="Password is missing" textFill="#f40000" visible="false" />
-      <Label layoutX="348.0" layoutY="526.0" text="Username or Password is Wrong" textFill="#f40000" visible="false" />
+            <Pane layoutX="654.0" layoutY="-2.0" prefHeight="703.0" prefWidth="246.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <JFXButton layoutX="-157.0" layoutY="321.0" onAction="#agentpanel" prefHeight="42.0" prefWidth="314.0" style="-fx-border-color: #F36557; -fx-border-radius: 20px; -fx-background-color: #FF5733; -fx-background-radius: 20;" text="Agent Panel">
+                     <font>
+                        <Font name="Cooper Black" size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Pane layoutY="654.0" prefHeight="46.0" prefWidth="902.0" style="-fx-background-color: black;">
+               <children>
+                  <Label alignment="CENTER" layoutY="9.0" prefHeight="17.0" prefWidth="902.0" text="Safely Deal With your Money" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <JFXButton layoutX="440.0" layoutY="458.0" onAction="#userpanel" prefHeight="42.0" prefWidth="314.0" style="-fx-border-color: #F36557; -fx-border-radius: 20px; -fx-background-color: #FF5733; -fx-background-radius: 20;" text="User Panel">
+               <font>
+                  <Font name="Cooper Black" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="440.0" layoutY="177.0" onAction="#adminpanel" prefHeight="42.0" prefWidth="314.0" style="-fx-border-color: #F36557; -fx-border-radius: 20px; -fx-background-color: #FF5733; -fx-background-radius: 20px;" text="Admin Panel">
+               <font>
+                  <Font name="Cooper Black" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane id="userpane" fx:id="userpane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1F2D3A;" visible="false">
+         <children>
+            <JFXButton layoutX="361.0" layoutY="394.0" onAction="#login" prefHeight="40.0" prefWidth="144.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Log In" textFill="WHITE" />
+            <JFXButton layoutX="179.0" layoutY="594.0" onAction="#SignUp" prefHeight="40.0" prefWidth="223.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px;" text="Sign Up" textFill="#fff2f2" />
+            <JFXButton layoutX="450.0" layoutY="594.0" onAction="#ForgetPassword" prefHeight="40.0" prefWidth="251.0" style="-fx-background-color: #212F3D; -fx-border-color: #FFFFFF; -fx-border-radius: 20px;" text="Forget Password" textFill="#f4f0f0" />
+            <PasswordField fx:id="UserPassword" alignment="CENTER" layoutX="296.0" layoutY="312.0" prefHeight="46.0" prefWidth="274.0" promptText="Password" style="-fx-background-color: #212F3D; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="UserAccountId" alignment="CENTER" layoutX="296.0" layoutY="239.0" prefHeight="40.0" prefWidth="274.0" promptText="Account Id" style="-fx-background-color: #212F3D; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutY="78.0" prefHeight="118.0" prefWidth="900.0" text="Label">
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="348.0" pickOnBounds="true" preserveRatio="true" x="259.0" y="76.0">
+                     <image>
+                        <Image url="@Logo.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="381.0" layoutY="290.0" text="Password is missing" textFill="#f40000" visible="false" />
+            <Label layoutX="347.0" layoutY="534.0" text="Username or Password is Wrong" textFill="#f40000" visible="false" />
+            <Hyperlink layoutX="372.0" layoutY="649.0" onAction="#backtotop" text="Back to Home" textFill="BLUE">
+               <font>
+                  <Font name="Cooper Black" size="16.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </Pane>
       <AnchorPane id="SignUpForm1" fx:id="AnchorPaneSignUpForm1" layoutX="-1.0" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1F2D3A;" stylesheets="@Design.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
          <children>
             <TextField fx:id="firstname" alignment="CENTER" layoutX="217.0" layoutY="153.0" maxWidth="-Infinity" prefHeight="34.0" prefWidth="298.0" promptText="First Name" style="-fx-background-color: #1F2D3A; -fx-border-color: #ffffff; -fx-border-radius: 20px; -fx-text-fill: #ffffff;">
@@ -159,6 +209,61 @@
             <Label layoutX="552.0" layoutY="346.0" prefHeight="18.0" prefWidth="46.0" text="+880" textFill="WHITE">
                <font>
                   <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="signfirstnamerr" layoutX="223.0" layoutY="126.0" prefHeight="18.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Invalid Characters" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signlasterr" layoutX="552.0" layoutY="126.0" prefHeight="18.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Invalid Characters" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signmothererr" layoutX="223.0" layoutY="193.0" prefHeight="16.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Invalid Characters" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signfathererr" layoutX="552.0" layoutY="193.0" prefHeight="16.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Invalid Characters" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signemailerr" layoutX="223.0" layoutY="256.0" prefHeight="16.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Invalid Email" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signnationalityerr" layoutX="552.0" layoutY="256.0" prefHeight="16.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Invalid Characters" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signreligionerr" layoutX="223.0" layoutY="323.0" prefHeight="16.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Empty Entry" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signphonenumbererr" layoutX="611.0" layoutY="323.0" prefHeight="19.0" prefWidth="160.0" style="-fx-text-fill: red;" text="*Invalid Phone Number" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signmaritalstatuserr" layoutX="223.0" layoutY="390.0" prefHeight="16.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Empty Entry" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signgendererr" layoutX="552.0" layoutY="390.0" prefHeight="16.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Empty Entry" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="signbirtherr" layoutX="223.0" layoutY="459.0" prefHeight="16.0" prefWidth="118.0" style="-fx-text-fill: red;" text="*Empty Entry" visible="false">
+               <font>
+                  <Font size="13.0" />
                </font>
             </Label>
             
@@ -304,7 +409,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <Label fx:id="verificationcodeemaillabel" alignment="CENTER" layoutY="191.0" prefHeight="21.0" prefWidth="900.0" text="pealhasan6@gmail.com" textFill="WHITE" visible="false">
+                  <Label fx:id="verificationcodeemaillabel" alignment="CENTER" layoutY="191.0" prefHeight="21.0" prefWidth="900.0" text="Email" textFill="WHITE" visible="false">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -317,6 +422,15 @@
                   </ImageView>
                </children>
             </Pane>
+            <Label fx:id="signposterr" layoutX="161.0" layoutY="153.0" style="-fx-text-fill: red;" text="*Invalid Characters" visible="false" />
+            <Label fx:id="signcityerr" layoutX="544.0" layoutY="153.0" style="-fx-text-fill: red;" text="*Invalid Characters" visible="false" />
+            <Label fx:id="signdistricterr" layoutX="161.0" layoutY="213.0" style="-fx-text-fill: red;" text="*Invalid Characters" visible="false" />
+            <Label fx:id="signpostalerr" layoutX="544.0" layoutY="213.0" style="-fx-text-fill: red;" text="*Invalid Postal Code" visible="false" />
+            <Label fx:id="signniderr" layoutX="161.0" layoutY="329.0" style="-fx-text-fill: red;" text="*Invalid NID" visible="false" />
+            <Label fx:id="signincomeerr" layoutX="161.0" layoutY="384.0" style="-fx-text-fill: red;" text="*Empty Entry" visible="false" />
+            <Label fx:id="signoccupationerr" layoutX="544.0" layoutY="384.0" style="-fx-text-fill: red;" text="*invalid Characters" visible="false" />
+            <Label fx:id="signpassworderr" layoutX="364.0" layoutY="496.0" prefHeight="18.0" prefWidth="349.0" style="-fx-text-fill: red;" text="*less than 6 digit or confirm password doesn't match" visible="false" />
+            <Label fx:id="signconfirmpassworderr" layoutX="754.0" layoutY="37.0" prefHeight="18.0" prefWidth="46.0" style="-fx-text-fill: red;" text="*Confirm Password doesn't match" visible="false" />
          </children>
       </AnchorPane>
       <Pane fx:id="ErrorDialogPane" layoutX="255.0" layoutY="471.0" prefHeight="54.0" prefWidth="358.0" style="-fx-background-color: #D6B4B4; -fx-background-radius: 20px;" visible="false">
@@ -431,239 +545,90 @@
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="AnchorPaneUser" prefHeight="700.0" prefWidth="909.0" style="-fx-background-color: #1F2D3A;" visible="false">
+      <AnchorPane id="backcolor" fx:id="AnchorPaneUser" prefHeight="700.0" prefWidth="909.0" stylesheets="@Theme1.css" visible="false">
          <children>
-            <Pane fx:id="UserMenuPane" layoutX="-4.0" layoutY="95.0" prefHeight="608.0" prefWidth="202.0" style="-fx-background-color: #9E9E9E;" stylesheets="@Design.css">
+            <Pane id="frontcolor" fx:id="UserMenuPane" layoutX="-4.0" layoutY="95.0" prefHeight="608.0" prefWidth="202.0" style="-fx-background-radius: 0;">
                <children>
-                  <JFXButton id="menubtn" layoutX="76.0" layoutY="37.0" onAction="#HomeOnMouseClicked" prefHeight="40.0" prefWidth="128.0" text="Home" />
-                  <Line endX="100.0" layoutX="101.0" layoutY="37.0" startX="-24.999984741210938" />
-                  <Line endX="64.40000915527344" endY="1.52587890625E-5" layoutX="137.0" layoutY="76.0" startX="-61.19996643066406" startY="1.52587890625E-5" />
-                  <Line endX="88.40000915527344" endY="1.52587890625E-5" layoutX="114.0" layoutY="115.0" startX="-37.99998474121094" startY="1.52587890625E-5" />
-                  <Line endX="88.40000915527344" endY="1.52587890625E-5" layoutX="114.0" layoutY="155.0" startX="-37.19996643066406" startY="1.52587890625E-5" />
-                  <Line endX="108.40000915527344" layoutX="94.0" layoutY="193.0" startX="-16.399978637695312" />
-                  <Line endX="100.0" layoutX="101.0" layoutY="232.0" startX="-23.399978637695312" />
-                  <Line endX="100.0" layoutX="102.0" layoutY="271.0" startX="-24.999984741210938" />
-                  <Line endX="78.40000915527344" layoutX="125.0" layoutY="310.0" startX="-48.79997253417969" />
-                  <JFXButton id="menubtn" layoutX="76.0" layoutY="76.0" onAction="#ProfileOnMouseClicked" prefHeight="40.0" prefWidth="128.0" text="Profile" />
-                  <JFXButton id="menubtn" layoutX="76.0" layoutY="115.0" onAction="#BankingOnMouseClicked" prefHeight="40.0" prefWidth="128.0" text="Banking" />
-                  <JFXButton id="menubtn" layoutX="76.0" layoutY="155.0" prefHeight="40.0" prefWidth="128.0" text="Transactions" />
-                  <JFXButton id="menubtn" layoutX="76.0" layoutY="193.0" onAction="#EnteringAdminPane" prefHeight="40.0" prefWidth="128.0" text="Administrator" />
-                  <JFXButton id="menubtn" layoutX="76.0" layoutY="232.0" onAction="#EnteringAgentMode" prefHeight="40.0" prefWidth="128.0" text="Agent" />
-                  <JFXButton id="menubtn" layoutX="76.0" layoutY="271.0" prefHeight="40.0" prefWidth="128.0" text="About Us" />
-                  <JFXButton id="logout" layoutX="22.0" layoutY="541.0" onAction="#logout" prefHeight="40.0" prefWidth="158.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Log Out" />
+                  <Line id="paneline" fx:id="line2" endX="64.40000915527344" endY="1.52587890625E-5" layoutX="137.0" layoutY="76.0" startX="-61.19996643066406" startY="1.52587890625E-5" />
+                  <Line id="paneline" fx:id="line3" endX="88.40000915527344" endY="1.52587890625E-5" layoutX="114.0" layoutY="115.0" startX="-37.99998474121094" startY="1.52587890625E-5" />
+                  <Line id="paneline" fx:id="line4" endX="88.40000915527344" endY="1.52587890625E-5" layoutX="114.0" layoutY="155.0" startX="-37.19996643066406" startY="1.52587890625E-5" />
+                  <Line id="paneline" fx:id="line5" endX="108.40000915527344" layoutX="94.0" layoutY="193.0" startX="-16.399978637695312" />
+                  <Line id="paneline" fx:id="line6" endX="100.0" layoutX="101.0" layoutY="232.0" startX="-23.399978637695312" />
+                  <Line id="paneline" fx:id="line7" endX="100.0" layoutX="102.0" layoutY="271.0" startX="-24.999984741210938" />
+                  <JFXButton id="menubtn" fx:id="menubtn2" layoutX="76.0" layoutY="76.0" onAction="#ProfileOnMouseClicked" prefHeight="40.0" prefWidth="128.0" text="Profile" />
+                  <JFXButton id="menubtn" fx:id="menubtn3" layoutX="76.0" layoutY="115.0" onAction="#BankingOnMouseClicked" prefHeight="40.0" prefWidth="128.0" text="Banking" />
+                  <JFXButton id="menubtn" fx:id="menubtn4" layoutX="76.0" layoutY="155.0" onAction="#userTransactionHistory" prefHeight="40.0" prefWidth="128.0" text="Transactions" />
+                  <JFXButton id="menubtn" fx:id="menubtn5" layoutX="76.0" layoutY="193.0" onAction="#EnteringUserChangePass" prefHeight="40.0" prefWidth="128.0" text="Change Password" />
+                  <JFXButton id="menubtn" fx:id="menubtn6" layoutX="76.0" layoutY="232.0" onAction="#EnteringThemePane" prefHeight="40.0" prefWidth="128.0" text="Theme" />
+                  <JFXButton id="bankingactionbtn" fx:id="menubtn8" layoutX="22.0" layoutY="541.0" onAction="#logout" prefHeight="40.0" prefWidth="158.0" text="Log Out" />
                </children>
             </Pane>
-            <Pane layoutX="216.0" layoutY="104.0" prefHeight="534.0" prefWidth="674.0" style="-fx-background-color: #9E9E9E;">
+            <Pane id="frontcolor" fx:id="homemainpane" layoutX="216.0" layoutY="104.0" prefHeight="534.0" prefWidth="674.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;">
                <children>
-                  <Pane id="Home" fx:id="homepane" layoutX="22.0" layoutY="9.0" prefHeight="502.0" prefWidth="628.0" visible="false" />
-                  <Pane id="Banking" fx:id="bankingpane" layoutX="17.0" layoutY="10.0" prefHeight="502.0" prefWidth="637.0" style="-fx-background-color: #9E9E9E;" stylesheets="@Banking.css" visible="false">
+                  <Pane id="Home" fx:id="homepane" layoutX="14.0" layoutY="13.0" prefHeight="502.0" prefWidth="628.0" />
+                  <Pane id="frontcolor" fx:id="bankingpane" layoutX="17.0" layoutY="10.0" prefHeight="502.0" prefWidth="637.0" visible="false">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="12.0" prefHeight="47.0" prefWidth="624.0" text="Safely Deal With" textFill="#1f2d3a">
+                        <Label id="backtext" fx:id="safelydealwith" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="12.0" prefHeight="47.0" prefWidth="646.0" text="Safely Deal With" textFill="#1F2D3A">
                            <font>
                               <Font name="System Italic" size="32.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="68.0" prefHeight="46.0" prefWidth="624.0" text="Your Money" textFill="#1f2d3a">
+                        <Label id="backtext" fx:id="yourmoney" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="68.0" prefHeight="47.0" prefWidth="637.0" text="Your Money" textFill="#1F2D3A">
                            <font>
                               <Font name="System Italic" size="32.0" />
                            </font>
                         </Label>
-                        <Line endX="303.90008544921875" endY="-0.70001220703125" layoutX="305.0" layoutY="142.0" startX="-274.29998779296875" startY="0.89996337890625" stroke="#1f2d3a" strokeWidth="5.0" />
-                        <Line endX="312.90008544921875" endY="0.0999755859375" layoutX="296.0" layoutY="475.0" startX="-266.29998779296875" startY="0.89996337890625" stroke="#1f2d3a" strokeWidth="5.0" />
-                        <Line endX="-84.79998779296875" endY="407.39996337890625" layoutX="115.0" layoutY="68.0" startX="-84.79998779296875" startY="75.39996337890625" />
-                        <Line endX="103.40008544921875" endY="359.5999755859375" layoutX="506.0" layoutY="115.0" startX="103.40008544921875" startY="26.79998779296875" />
-                        <Label id="bankingbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="338.0" layoutY="189.0" prefHeight="110.0" prefWidth="168.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20px;" text="Send Money" textFill="WHITE">
+                        <Line id="paneline" fx:id="paneline1" endX="303.90008544921875" endY="-0.70001220703125" layoutX="305.0" layoutY="142.0" startX="-274.29998779296875" startY="0.89996337890625" stroke="#1F2D3A" strokeWidth="5.0" />
+                        <Line id="paneline" fx:id="paneline4" endX="312.90008544921875" endY="0.0999755859375" layoutX="296.0" layoutY="475.0" startX="-266.29998779296875" startY="0.89996337890625" stroke="#1F2D3A" strokeWidth="5.0" />
+                        <Line id="paneline" fx:id="paneline3" endX="-84.79998779296875" endY="407.39996337890625" layoutX="115.0" layoutY="68.0" startX="-84.79998779296875" startY="75.39996337890625" />
+                        <Line id="paneline" fx:id="paneline2" endX="103.40008544921875" endY="359.5999755859375" layoutX="506.0" layoutY="115.0" startX="103.40008544921875" startY="26.79998779296875" />
+                        <Label id="bankingbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="338.0" layoutY="189.0" onMouseClicked="#EnteringSendMoneyPane" prefHeight="110.0" prefWidth="168.0" text="Send Money" textFill="#9e9e9e">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label id="bankingbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="135.0" layoutY="189.0" prefHeight="110.0" prefWidth="168.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20px;" text="Payment" textFill="WHITE">
+                        <Label id="bankingbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="135.0" layoutY="189.0" onMouseClicked="#EnteringPaymentPane" prefHeight="110.0" prefWidth="168.0" text="Payment" textFill="#9e9e9e">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label id="bankingbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="236.0" layoutY="332.0" prefHeight="110.0" prefWidth="168.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20px;" text="Recharge" textFill="WHITE">
+                        <Label id="bankingbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="135.0" layoutY="332.0" onMouseClicked="#EnteringRechargePane" prefHeight="110.0" prefWidth="168.0" text="Recharge" textFill="#9e9e9e">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label id="bankingbtn" alignment="CENTER" layoutX="340.0" layoutY="332.0" onMouseClicked="#EnteringWithdrawBankingPane" prefHeight="110.0" prefWidth="168.0" text="Withdraw">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
                      </children>
                   </Pane>
-                  <Pane id="BankingDeposit" fx:id="bankingdepositpane" layoutX="-2.0" prefHeight="524.0" prefWidth="674.0" stylesheets="@Banking.css" visible="false">
+                  <Pane id="BankingWithdraw" fx:id="bankingwithdrawpane" prefHeight="524.0" prefWidth="674.0" visible="false">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="258.0" layoutY="26.0" prefHeight="40.0" prefWidth="158.0" text="Deposit" textFill="#1f2d3a">
+                        <Label id="backtext" alignment="CENTER" contentDisplay="CENTER" layoutX="258.0" layoutY="26.0" prefHeight="40.0" prefWidth="158.0" text="Withdraw" textFill="#1F2D3A">
                            <font>
                               <Font size="31.0" />
                            </font>
                         </Label>
-                        <Line endX="100.0" layoutX="337.0" layoutY="80.0" startX="-100.0" stroke="#1f2d3a" strokeWidth="3.0" />
-                        <TextField fx:id="depositamounttextfield" layoutX="120.0" layoutY="248.0" prefHeight="46.0" prefWidth="407.0" style="-fx-background-color: #9E9E9E; -fx-text-fill: #1F2D3A;">
+                        <Line id="paneline" endX="100.0" layoutX="337.0" layoutY="80.0" startX="-100.0" stroke="#1F2D3A" strokeWidth="3.0" />
+                        <TextField id="inputtext" fx:id="withdrawamounttextfield" layoutX="120.0" layoutY="248.0" prefHeight="46.0" prefWidth="407.0">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </TextField>
-                        <Line fx:id="depositaccountidline" endX="263.00006103515625" endY="-1.0" layoutX="257.0" layoutY="204.0" startX="-130.0" startY="-1.0" stroke="#1f2d3a" />
-                        <Label layoutX="536.0" layoutY="262.0" prefHeight="28.0" prefWidth="52.0" text="BDT" textFill="#1f2d3a">
+                        <Line id="paneline" fx:id="withdrawaccountidline" endX="263.00006103515625" endY="-1.0" layoutX="257.0" layoutY="204.0" startX="-130.0" startY="-1.0" stroke="#1F2D3A" />
+                        <Label id="backtext" layoutX="536.0" layoutY="262.0" prefHeight="28.0" prefWidth="52.0" text="BDT" textFill="#030000">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="depositamountlabel" layoutX="127.0" layoutY="221.0" prefHeight="27.0" prefWidth="64.0" text="Amount" textFill="#1f2d3a">
+                        <Label id="backtext" fx:id="withdrawamountlabel" layoutX="127.0" layoutY="221.0" prefHeight="27.0" prefWidth="64.0" text="Amount" textFill="#ff0303">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <JFXButton id="bankingactionbtn" fx:id="depostibtn" layoutX="205.0" layoutY="331.0" onAction="#Deposit" prefHeight="40.0" prefWidth="251.0" style="-fx-border-radius: 20px; -fx-border-color: #1F2D3A; -fx-background-radius: 20px;" text="Deposit">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </JFXButton>
-                        <Pane id="Error Message" fx:id="depositerrormessage" layoutX="162.0" layoutY="407.0" prefHeight="54.0" prefWidth="334.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
-                           <children>
-                              <ImageView fitHeight="46.0" fitWidth="64.0" layoutX="6.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@ErrorSign.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="79.0" layoutY="11.0" prefHeight="29.0" prefWidth="232.0" text="Enter a valid amount" textFill="RED">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <Pane id="Success Message" fx:id="depositsuccessmessage" layoutX="167.0" layoutY="397.0" prefHeight="52.0" prefWidth="328.0" style="-fx-background-color: #B6F1D4; -fx-background-radius: 20px;" visible="false">
-                           <children>
-                              <ImageView fitHeight="40.0" fitWidth="42.0" layoutX="19.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@success.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="70.0" layoutY="8.0" prefHeight="36.0" prefWidth="232.0" text="Successfully Depositted" textFill="GREEN">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <JFXButton id="bankingactionbtn" fx:id="depositpanebackbtn" layoutX="35.0" layoutY="468.0" onAction="#BackFromEnteringDepositPane" prefHeight="38.0" prefWidth="194.0" style="-fx-border-radius: 20px; -fx-border-color: #1F2D3A; -fx-background-radius: 20px;" text="Back">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </JFXButton>
-                        <Label fx:id="depositaccountidlabel" layoutX="127.0" layoutY="123.0" prefHeight="27.0" prefWidth="94.0" text="Account Id" textFill="#1f2d3a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="depositaccountidtextfield" layoutX="120.0" layoutY="150.0" prefHeight="46.0" prefWidth="407.0" style="-fx-background-color: #9E9E9E; -fx-text-fill: #1F2D3A;">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </TextField>
-                        <Line fx:id="depositamountline" endX="527.6000366210938" endY="289.0" layoutX="-8.0" layoutY="11.0" startX="137.20001220703125" startY="289.0" stroke="#1f2d3a" />
-                        <Pane id="Error Message 2" fx:id="depositerrormessage1" layoutX="157.0" layoutY="389.0" prefHeight="54.0" prefWidth="334.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
-                           <children>
-                              <ImageView fitHeight="46.0" fitWidth="64.0" layoutX="6.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@ErrorSign.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="79.0" layoutY="11.0" prefHeight="29.0" prefWidth="232.0" text="No Account Id Found" textFill="RED">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                     </children>
-                  </Pane>
-                  <Pane id="AgentMode" fx:id="agentmodepane" layoutX="-2.0" layoutY="-1.0" prefHeight="530.0" prefWidth="682.0" visible="false">
-                     <children>
-                        <Label layoutX="288.0" layoutY="14.0" text="Agent" textFill="#1f2d3a">
-                           <font>
-                              <Font size="28.0" />
-                           </font>
-                        </Label>
-                        <Line endX="100.0" layoutX="325.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" strokeWidth="3.0" />
-                        <Label fx:id="agentidlabel" layoutX="84.0" layoutY="105.0" prefHeight="22.0" prefWidth="64.0" text="Agent Id" textFill="#1f2d3a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="agentpinlabel" layoutX="85.0" layoutY="197.0" text="PIN" textFill="#1f2d3a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="agentid" layoutX="77.0" layoutY="127.0" prefHeight="40.0" prefWidth="429.0" style="-fx-background-color: #9E9E9E;">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
-                        <Line fx:id="agentidline" endX="321.00006103515625" layoutX="185.0" layoutY="167.0" startX="-100.0" />
-                        <TextField fx:id="agentpin" layoutX="81.0" layoutY="218.0" prefHeight="40.0" prefWidth="429.0" style="-fx-background-color: #9E9E9E;">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
-                        <Line fx:id="agentpinline" endX="504.40008544921875" endY="260.79998779296875" layoutY="-3.0" startX="88.4000244140625" startY="260.79998779296875" />
-                        <Pane id="agenterrormessage" fx:id="agenterrormessage" layoutX="155.0" layoutY="313.0" prefHeight="54.0" prefWidth="328.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
-                           <children>
-                              <ImageView fitHeight="40.0" fitWidth="64.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@ErrorSign.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="78.0" layoutY="10.0" prefHeight="34.0" prefWidth="223.0" text="You are not an Agent" textFill="#ff0000">
-                                 <font>
-                                    <Font size="17.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <Label id="menubtn" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="408.0" onMouseClicked="#EnteringAgentModeBankingPane" prefHeight="46.0" prefWidth="203.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" stylesheets="@Design.css" text="Enter" textFill="#1f2d3a" />
-                     </children>
-                  </Pane>
-                  <Pane id="AgentModeBanking" fx:id="agentmodebankingpane" layoutY="-1.0" prefHeight="530.0" prefWidth="674.0" visible="false">
-                     <children>
-                        <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="135.0" layoutY="123.0" onAction="#EnteringDepositPane" prefHeight="118.0" prefWidth="394.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20px;" text="Deposit" textFill="#9e9e9e">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="132.0" layoutY="259.0" onAction="#EnteringWithdrawBankingPane" prefHeight="118.0" prefWidth="394.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20px;" text="Withdraw" textFill="#9e9e9e">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </JFXButton>
-                     </children>
-                  </Pane>
-                  <Pane id="BankingWithdraw" fx:id="bankingwithdrawpane" prefHeight="524.0" prefWidth="674.0" stylesheets="@Banking.css" visible="false">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="258.0" layoutY="26.0" prefHeight="40.0" prefWidth="158.0" text="Withdraw" textFill="#1f2d3a">
-                           <font>
-                              <Font size="31.0" />
-                           </font>
-                        </Label>
-                        <Line endX="100.0" layoutX="337.0" layoutY="80.0" startX="-100.0" stroke="#1f2d3a" strokeWidth="3.0" />
-                        <TextField fx:id="withdrawamounttextfield" layoutX="120.0" layoutY="248.0" prefHeight="46.0" prefWidth="407.0" style="-fx-background-color: #9E9E9E; -fx-text-fill: #1F2D3A;">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </TextField>
-                        <Line fx:id="withdrawaccountidline" endX="263.00006103515625" endY="-1.0" layoutX="257.0" layoutY="204.0" startX="-130.0" startY="-1.0" stroke="#1f2d3a" />
-                        <Label layoutX="536.0" layoutY="262.0" prefHeight="28.0" prefWidth="52.0" text="BDT" textFill="#1f2d3a">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="withdrawamountlabel" layoutX="127.0" layoutY="221.0" prefHeight="27.0" prefWidth="64.0" text="Amount" textFill="#1f2d3a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <JFXButton id="bankingactionbtn" fx:id="withdraw" layoutX="205.0" layoutY="331.0" onAction="#Withdraw" prefHeight="40.0" prefWidth="251.0" style="-fx-border-radius: 20px; -fx-border-color: #1F2D3A; -fx-background-radius: 20px;" text="Withdraw">
+                        <JFXButton id="bankingactionbtn" fx:id="withdraw" layoutX="205.0" layoutY="331.0" onAction="#Withdraw" prefHeight="40.0" prefWidth="251.0" text="Withdraw">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -696,22 +661,22 @@
                               </Label>
                            </children>
                         </Pane>
-                        <JFXButton id="bankingactionbtn" fx:id="withdrawbackbtn" layoutX="35.0" layoutY="468.0" onAction="#BackFromEnteringWithdrawPane" prefHeight="38.0" prefWidth="194.0" style="-fx-border-radius: 20px; -fx-border-color: #1F2D3A; -fx-background-radius: 20px;" text="Back">
+                        <JFXButton id="bankingactionbtn" fx:id="withdrawbackbtn" layoutX="35.0" layoutY="468.0" onAction="#BackFromEnteringWithdrawPane" prefHeight="38.0" prefWidth="194.0" text="Back">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </JFXButton>
-                        <Label fx:id="withdrawaccountidlabel" layoutX="127.0" layoutY="123.0" prefHeight="27.0" prefWidth="94.0" text="Account Id" textFill="#1f2d3a">
+                        <Label id="backtext" fx:id="withdrawaccountidlabel" layoutX="127.0" layoutY="123.0" prefHeight="27.0" prefWidth="94.0" text="Agent Id" textFill="#1F2D3A">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="withdrawaccountidtextfield" layoutX="120.0" layoutY="150.0" prefHeight="46.0" prefWidth="407.0" style="-fx-background-color: #9E9E9E; -fx-text-fill: #1F2D3A;">
+                        <TextField id="inputtext" fx:id="withdrawaccountidtextfield" layoutX="120.0" layoutY="150.0" prefHeight="46.0" prefWidth="407.0">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </TextField>
-                        <Line fx:id="withdrawamountline" endX="527.6000366210938" endY="289.0" layoutX="-8.0" layoutY="11.0" startX="137.20001220703125" startY="289.0" stroke="#1f2d3a" />
+                        <Line id="paneline" fx:id="withdrawamountline" endX="527.6000366210938" endY="289.0" layoutX="-8.0" layoutY="11.0" startX="137.20001220703125" startY="289.0" stroke="#ec0e0e" />
                         <Pane id="Error Message 2" fx:id="withdrawerrormessage" layoutX="157.0" layoutY="389.0" prefHeight="54.0" prefWidth="334.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
                            <children>
                               <ImageView fitHeight="46.0" fitWidth="64.0" layoutX="6.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
@@ -742,487 +707,86 @@
                         </Pane>
                      </children>
                   </Pane>
-                  <Pane id="FilteringChartPane" fx:id="filteringchartpane" layoutX="14.0" layoutY="-7.0" prefHeight="534.0" prefWidth="682.0" stylesheets="@ChartDesign.css" visible="false">
+                  <Pane id="Profile" fx:id="profilepane" prefHeight="534.0" prefWidth="674.0" visible="false">
                      <children>
-                        <JFXButton layoutX="432.0" layoutY="474.0" onAction="#chart" prefHeight="38.0" prefWidth="211.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Filter" />
-                        <ComboBox fx:id="charttypechoice" layoutX="26.0" layoutY="287.0" prefHeight="27.0" prefWidth="306.0" />
-                        <ComboBox fx:id="fromyearchoice" layoutX="27.0" layoutY="99.0" prefHeight="27.0" prefWidth="203.0" />
-                        <ComboBox fx:id="frommonthchoice" layoutX="240.0" layoutY="99.0" prefHeight="27.0" prefWidth="203.0" />
-                        <ComboBox fx:id="fromdaychoice" layoutX="452.0" layoutY="99.0" prefHeight="27.0" prefWidth="203.0" />
-                        <Label layoutX="27.0" layoutY="14.0" text="Date (yyyy/mm/dd)" textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="25.0" />
-                           </font>
-                        </Label>
-                        <Line endX="144.800048828125" layoutX="127.0" layoutY="50.0" startX="-100.0" stroke="#1f2d3a" />
-                        <Label layoutX="27.0" layoutY="63.0" text="From : " textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="27.0" layoutY="140.0" text="To : " textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <ComboBox fx:id="toyearchoice" layoutX="26.0" layoutY="176.0" prefHeight="27.0" prefWidth="203.0" />
-                        <ComboBox fx:id="tomonthchoice" layoutX="240.0" layoutY="176.0" prefHeight="27.0" prefWidth="203.0" />
-                        <ComboBox fx:id="todaychoice" layoutX="452.0" layoutY="176.0" prefHeight="27.0" prefWidth="203.0" />
-                        <Line endX="663.7999877929688" endY="225.5999755859375" startX="27.000045776367188" startY="225.5999755859375" stroke="#1f2d3a" />
-                        <Label layoutX="26.0" layoutY="246.0" text="Chart Type : " textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="349.0" layoutY="246.0" text="Subject On : " textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <ComboBox fx:id="subjectonchoice" layoutX="349.0" layoutY="287.0" prefHeight="27.0" prefWidth="306.0" />
-                        <ComboBox fx:id="analysistypechoice" layoutX="27.0" layoutY="375.0" prefHeight="27.0" prefWidth="321.0" />
-                        <Label layoutX="26.0" layoutY="334.0" text="Analysis Type : " textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Pane fx:id="filteringchartpaneerrormessage" layoutX="142.0" layoutY="414.0" prefHeight="52.0" prefWidth="358.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
-                           <children>
-                              <ImageView fitHeight="54.0" fitWidth="75.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@ErrorSign.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="91.0" layoutY="15.0" prefHeight="19.0" prefWidth="211.0" text="Date interval is imperfect" textFill="RED">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <JFXButton layoutX="29.0" layoutY="474.0" onAction="#EnteringAdminChoicePane" prefHeight="38.0" prefWidth="211.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Back" />
-                     </children></Pane>
-                  <Pane id="ChartShowingPane" fx:id="chartshowingpane" layoutX="-5.0" layoutY="-1.0" prefHeight="541.0" prefWidth="682.0" stylesheets="@ChartDesign.css" visible="false">
-                     <children>
-                        <LineChart fx:id="linechart" layoutX="7.0" layoutY="3.0" prefHeight="480.0" prefWidth="673.0" visible="false">
-                          <xAxis>
-                            <CategoryAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
-                        </LineChart>
-                        <BarChart fx:id="barchart" layoutX="4.0" layoutY="1.0" prefHeight="480.0" prefWidth="682.0" visible="false">
-                          <xAxis>
-                            <CategoryAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
-                        </BarChart>
-                        <AreaChart fx:id="areachart" layoutX="5.0" prefHeight="480.0" prefWidth="674.0" visible="false">
-                          <xAxis>
-                            <CategoryAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
-                        </AreaChart>
-                        <StackedAreaChart fx:id="stackedareachart" layoutX="9.0" layoutY="2.0" prefHeight="480.0" prefWidth="673.0" visible="false">
-                          <xAxis>
-                            <NumberAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
-                        </StackedAreaChart>
-                        <StackedBarChart fx:id="stackedbarchart" layoutX="1.0" layoutY="1.0" prefHeight="480.0" prefWidth="682.0" visible="false">
-                          <xAxis>
-                            <CategoryAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
-                        </StackedBarChart>
-                        <JFXButton layoutX="220.0" layoutY="489.0" onAction="#BackFromChartShowingPane" prefHeight="38.0" prefWidth="251.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Back" />
-                     </children>
-                  </Pane>
-                  <Pane id="AdministrationMode" fx:id="administrationpane" prefHeight="530.0" prefWidth="682.0" visible="false">
-                     <children>
-                        <Label layoutX="288.0" layoutY="14.0" text="Admin" textFill="#1f2d3a">
-                           <font>
-                              <Font size="28.0" />
-                           </font>
-                        </Label>
-                        <Line endX="100.0" layoutX="325.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" strokeWidth="3.0" />
-                        <Label fx:id="adminidlabel" layoutX="84.0" layoutY="105.0" prefHeight="22.0" prefWidth="64.0" text="Admin Id" textFill="#1f2d3a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="adminpinlabel" layoutX="85.0" layoutY="197.0" text="PIN" textFill="#1f2d3a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="adminidtextfield" layoutX="77.0" layoutY="127.0" prefHeight="40.0" prefWidth="429.0" style="-fx-background-color: #9E9E9E;">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
-                        <Line fx:id="adminidline" endX="321.00006103515625" layoutX="185.0" layoutY="167.0" startX="-100.0" />
-                        <TextField fx:id="adminpintextfield" layoutX="81.0" layoutY="218.0" prefHeight="40.0" prefWidth="429.0" style="-fx-background-color: #9E9E9E;">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
-                        <Line fx:id="adminpinline" endX="504.40008544921875" endY="260.79998779296875" layoutY="-3.0" startX="88.4000244140625" startY="260.79998779296875" />
-                        <Pane id="adminerrormessage" fx:id="adminerrormessage" layoutX="155.0" layoutY="313.0" prefHeight="54.0" prefWidth="328.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
-                           <children>
-                              <ImageView fitHeight="40.0" fitWidth="64.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@ErrorSign.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="78.0" layoutY="10.0" prefHeight="34.0" prefWidth="223.0" text="You are not Admin" textFill="#ff0000">
-                                 <font>
-                                    <Font size="17.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <Label id="menubtn" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="408.0" onMouseClicked="#EnteringAdminChoicePane" prefHeight="46.0" prefWidth="203.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" stylesheets="@Design.css" text="Enter" textFill="#1f2d3a" />
-                     </children>
-                  </Pane>
-                  <Pane id="AdminChoicePane" fx:id="adminchoicepane" layoutY="-2.0" prefHeight="541.0" prefWidth="674.0" stylesheets="@ChartDesign.css" visible="false">
-                     <children>
-                        <JFXButton layoutX="226.0" layoutY="239.0" onAction="#VisualizationFilter" prefHeight="40.0" prefWidth="223.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Visualization" />
-                        <JFXButton layoutX="28.0" layoutY="473.0" onAction="#EnteringAdminPane" prefHeight="40.0" prefWidth="172.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Back" />
-                        <JFXButton layoutX="226.0" layoutY="183.0" onAction="#EnteringDatabaseFilteringPane" prefHeight="40.0" prefWidth="223.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Database" />
-                     </children>
-                  </Pane>
-                  <Pane id="DatabaseFilteringPane" fx:id="databasefilteringpane" prefHeight="534.0" prefWidth="674.0" stylesheets="@ChartDesign.css" visible="false">
-                     <children>
-                        <Pane layoutX="14.0" layoutY="33.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasename" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="Name">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="14.0" layoutY="96.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasefathername" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="Father's Name">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="14.0" layoutY="163.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databaseemail" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="Email">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="14.0" layoutY="229.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasenid" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="NID">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="218.0" layoutY="33.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databaseaccountid" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="Account Id">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="218.0" layoutY="96.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasemothername" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="Mother's Name">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="218.0" layoutY="163.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasephonenumber" layoutX="44.0" layoutY="29.0" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="Phone Number">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                              <Pane layoutX="4.0" layoutY="64.0" prefHeight="77.0" prefWidth="188.0">
-                                 <children>
-                                    <TextField fx:id="databaseoccupation" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </TextField>
-                                    <Label layoutX="14.0" layoutY="4.0" text="Occupation">
-                                       <font>
-                                          <Font size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                                 </children>
-                              </Pane>
-                              <Label layoutX="14.0" layoutY="38.0" text="+880" textFill="#1f2d3a">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <Pane layoutX="466.0" layoutY="33.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasecity" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="City">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="466.0" layoutY="96.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasedistrict" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="District">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="466.0" layoutY="163.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasepostoffice" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="Post Office">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="466.0" layoutY="229.0" prefHeight="77.0" prefWidth="188.0">
-                           <children>
-                              <TextField fx:id="databasepostalcode" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0" style="-fx-background-color: #9E9E9E;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="14.0" layoutY="4.0" text="Postal Code">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1f2d3a" />
-                           </children>
-                        </Pane>
-                        <Line endX="566.0000610351562" layoutX="108.0" layoutY="318.0" startX="-108.00001525878906" stroke="#1f2d3a" strokeWidth="10.0" />
-                        <Line endX="214.800048828125" endY="-45.800048828125" layoutX="218.0" layoutY="357.0" startX="214.800048828125" startY="-357.0" stroke="#1f2d3a" strokeWidth="10.0" />
-                        <Label layoutX="22.0" layoutY="1.0" text="Personal Information" textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="477.0" layoutY="1.0" text="Address " textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Label>
-                        <ComboBox fx:id="databaseyear" layoutX="22.0" layoutY="363.0" prefHeight="27.0" prefWidth="203.0" />
-                        <Label layoutX="22.0" layoutY="323.0" text="Date Of Birth" textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Label>
-                        <ComboBox fx:id="databasemonth" layoutX="236.0" layoutY="363.0" prefHeight="27.0" prefWidth="203.0" />
-                        <ComboBox fx:id="databaseday" layoutX="451.0" layoutY="363.0" prefHeight="27.0" prefWidth="203.0" />
-                        <Line endX="566.0000610351562" layoutX="108.0" layoutY="410.0" startX="-108.00001525878906" stroke="#1f2d3a" strokeWidth="10.0" />
-                        <ComboBox fx:id="databasegender" layoutX="22.0" layoutY="455.0" prefHeight="27.0" prefWidth="160.0" />
-                        <ComboBox fx:id="databasereligion" layoutX="348.0" layoutY="455.0" prefHeight="27.0" prefWidth="160.0" />
-                        <ComboBox fx:id="databaseincome" layoutX="186.0" layoutY="455.0" prefHeight="27.0" prefWidth="160.0" />
-                        <ComboBox fx:id="databasemaritalstatus" layoutX="511.0" layoutY="455.0" prefHeight="27.0" prefWidth="160.0" />
-                        <Label layoutX="22.0" layoutY="415.0" text="Gender" textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="189.0" layoutY="415.0" text="Income" textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="348.0" layoutY="415.0" text="Religion" textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="511.0" layoutY="415.0" text="Marital Status" textFill="#1f2d3a">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Label>
-                        <JFXButton layoutX="441.0" layoutY="500.0" onAction="#EnteringDatabaseShowingPane" prefHeight="27.0" prefWidth="223.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Search" />
-                        <JFXButton layoutX="16.0" layoutY="500.0" onAction="#EnteringAdminChoicePane" prefHeight="27.0" prefWidth="223.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Back" />
-                     </children>
-                  </Pane>
-                  <Pane id="DatabaseShowingPane" fx:id="databaseshowingpane" prefHeight="534.0" prefWidth="674.0" stylesheets="@ChartDesign.css" visible="false">
-                     <children>
-                        <JFXTreeTableView fx:id="databasetable" layoutX="1.0" prefHeight="480.0" prefWidth="673.0" style="-fx-background-color: #9E9E9E;" />
-                        <JFXButton layoutX="215.0" layoutY="491.0" onAction="#BackFromDatabaseShowingPane" prefHeight="35.0" prefWidth="223.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Back" />
-                     </children>
-                  </Pane>
-                  <Pane id="Profile" fx:id="profilepane" prefHeight="534.0" prefWidth="674.0" stylesheets="@profiledesign.css" visible="false">
-                     <children>
-                        <Label fx:id="profilename" alignment="CENTER" prefHeight="40.0" prefWidth="682.0" text="Peal Hassan" textFill="#1f2d3a">
+                        <Label id="backtext" fx:id="profilename" alignment="CENTER" prefHeight="40.0" prefWidth="682.0" text="Peal Hassan" textFill="#1F2D3A">
                            <font>
                               <Font name="Kalpurush" size="33.0" />
                            </font>
                         </Label>
-                        <Line endX="261.00006103515625" endY="1.0" layoutX="341.0" layoutY="47.0" startX="-274.5999755859375" startY="1.0" stroke="#1f2d3a" />
-                        <Circle fill="#9e9e9e" layoutX="618.0" layoutY="48.0" radius="16.0" stroke="#1f2d3a" strokeType="INSIDE" />
-                        <Circle fill="#9e9e9e" layoutX="49.0" layoutY="48.0" radius="16.0" stroke="#1f2d3a" strokeType="INSIDE" />
-                        <Label fx:id="profilebalance" alignment="CENTER" layoutX="-4.0" layoutY="63.0" prefHeight="17.0" prefWidth="682.0" text="Balance : 1000.25 BDT">
+                        <Line id="paneline" endX="261.00006103515625" endY="1.0" layoutX="341.0" layoutY="47.0" startX="-274.5999755859375" startY="1.0" stroke="#1F2D3A" />
+                        <Circle id="paneline" fill="TRANSPARENT" layoutX="618.0" layoutY="48.0" radius="16.0" stroke="#1F2D3A" strokeType="INSIDE" />
+                        <Circle id="paneline" fill="TRANSPARENT" layoutX="49.0" layoutY="48.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label id="backtext" fx:id="profilebalance" alignment="CENTER" layoutX="-4.0" layoutY="63.0" prefHeight="17.0" prefWidth="682.0" text="Balance : 1000.25 BDT">
                            <font>
                               <Font name="Kalpurush" size="15.0" />
                            </font>
                         </Label>
-                        <Pane fx:id="profileouterpane" layoutX="49.0" layoutY="111.0" prefHeight="409.0" prefWidth="585.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-color: #9E9E9E; -fx-background-radius: 20px;">
+                        <Pane id="profilepane" fx:id="profileouterpane" layoutX="49.0" layoutY="111.0" prefHeight="409.0" prefWidth="585.0">
                            <children>
-                              <Label fx:id="profileouterpanelabel" alignment="CENTER" prefHeight="38.0" prefWidth="585.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20px;" text="Personal Information" textFill="#9e9e9e">
+                              <Label id="fronttext" fx:id="profileouterpanelabel" alignment="CENTER" prefHeight="38.0" prefWidth="585.0" text="Personal Information" textFill="#9e9e9e">
                                  <font>
                                     <Font name="Kalpurush" size="25.0" />
                                  </font>
                               </Label>
-                              <JFXButton layoutY="178.0" onAction="#profileanimationback" prefHeight="54.0" prefWidth="52.0" text="&lt;">
+                              <JFXButton id="slidebtn" layoutY="178.0" onAction="#profileanimationback" prefHeight="54.0" prefWidth="52.0" text="&lt;">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton layoutX="533.0" layoutY="178.0" onAction="#profileanimationnext" prefHeight="54.0" prefWidth="52.0" text="&gt;">
+                              <JFXButton id="slidebtn" layoutX="533.0" layoutY="178.0" onAction="#profileanimationnext" prefHeight="54.0" prefWidth="52.0" text="&gt;">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </JFXButton>
                               <Pane id="ProfilePersonalInformation" fx:id="profilepersonalinformationpane" layoutX="65.0" layoutY="51.0" prefHeight="344.0" prefWidth="451.0" style="-fx-background-color: #b39b86; -fx-background-radius: 20px;">
                                  <children>
-                                    <Label fx:id="profilefathername" alignment="CENTER" layoutX="4.0" layoutY="35.0" prefHeight="17.0" prefWidth="443.0" text="Father's Name : ">
+                                    <Label id="backtext" fx:id="profilefathername" alignment="CENTER" layoutX="4.0" layoutY="35.0" prefHeight="17.0" prefWidth="443.0" text="Father's Name : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profilemothername" alignment="CENTER" layoutY="69.0" prefHeight="25.0" prefWidth="451.0" text="Mother's Name : ">
+                                    <Label id="backtext" fx:id="profilemothername" alignment="CENTER" layoutY="69.0" prefHeight="25.0" prefWidth="451.0" text="Mother's Name : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profilegender" alignment="CENTER" layoutX="4.0" layoutY="102.0" prefHeight="17.0" prefWidth="443.0" text="Gender : ">
+                                    <Label id="backtext" fx:id="profilegender" alignment="CENTER" layoutX="4.0" layoutY="102.0" prefHeight="17.0" prefWidth="443.0" text="Gender : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profiledateofbirth" alignment="CENTER" layoutX="4.0" layoutY="135.0" prefHeight="17.0" prefWidth="443.0" text="Date of Birth : ">
+                                    <Label id="backtext" fx:id="profiledateofbirth" alignment="CENTER" layoutX="4.0" layoutY="135.0" prefHeight="17.0" prefWidth="443.0" text="Date of Birth : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profilenationality" alignment="CENTER" layoutX="4.0" layoutY="168.0" prefHeight="17.0" prefWidth="443.0" text="Nationality : ">
+                                    <Label id="backtext" fx:id="profilenationality" alignment="CENTER" layoutX="4.0" layoutY="168.0" prefHeight="17.0" prefWidth="443.0" text="Nationality : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profilereligion" alignment="CENTER" layoutX="4.0" layoutY="200.0" prefHeight="17.0" prefWidth="443.0" text="Religion : ">
+                                    <Label id="backtext" fx:id="profilereligion" alignment="CENTER" layoutX="4.0" layoutY="200.0" prefHeight="17.0" prefWidth="443.0" text="Religion : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profileoccupation" alignment="CENTER" layoutX="4.0" layoutY="231.0" prefHeight="17.0" prefWidth="443.0" text="Occupation : ">
+                                    <Label id="backtext" fx:id="profileoccupation" alignment="CENTER" layoutX="4.0" layoutY="231.0" prefHeight="17.0" prefWidth="443.0" text="Occupation : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profileincome" alignment="CENTER" layoutX="4.0" layoutY="264.0" prefHeight="17.0" prefWidth="443.0" text="Income : ">
+                                    <Label id="backtext" fx:id="profileincome" alignment="CENTER" layoutX="4.0" layoutY="264.0" prefHeight="17.0" prefWidth="443.0" text="Income : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profileage" alignment="CENTER" layoutX="4.0" layoutY="295.0" prefHeight="17.0" prefWidth="443.0" text="Age : ">
+                                    <Label id="backtext" fx:id="profileage" alignment="CENTER" layoutX="4.0" layoutY="295.0" prefHeight="17.0" prefWidth="443.0" text="Age : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profilenid" alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="17.0" prefWidth="443.0" text="NID : ">
+                                    <Label id="backtext" fx:id="profilenid" alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="17.0" prefWidth="443.0" text="NID : ">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
@@ -1231,22 +795,22 @@
                               </Pane>
                               <Pane id="ProfileAddress" fx:id="profileaddressinformationpane" layoutX="65.0" layoutY="51.0" prefHeight="344.0" prefWidth="451.0" style="-fx-background-color: #7691ad; -fx-background-radius: 20px;" visible="false">
                                  <children>
-                                    <Label fx:id="profilecity" alignment="CENTER" layoutX="4.0" layoutY="92.0" prefHeight="17.0" prefWidth="443.0" text="City : " textFill="#1f2d3a">
+                                    <Label id="backtext" fx:id="profilecity" alignment="CENTER" layoutX="4.0" layoutY="92.0" prefHeight="17.0" prefWidth="443.0" text="City : " textFill="#1F2D3A">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profiledistrict" alignment="CENTER" layoutX="-4.0" layoutY="127.0" prefHeight="25.0" prefWidth="451.0" text="District : " textFill="#1f2d3a">
+                                    <Label id="backtext" fx:id="profiledistrict" alignment="CENTER" layoutX="-4.0" layoutY="127.0" prefHeight="25.0" prefWidth="451.0" text="District : " textFill="#1F2D3A">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profilepostoffice" alignment="CENTER" layoutX="4.0" layoutY="160.0" prefHeight="17.0" prefWidth="443.0" text="Post Office : " textFill="#1f2d3a">
+                                    <Label id="backtext" fx:id="profilepostoffice" alignment="CENTER" layoutX="4.0" layoutY="160.0" prefHeight="17.0" prefWidth="443.0" text="Post Office : " textFill="#1F2D3A">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="profilepostalcode" alignment="CENTER" layoutX="4.0" layoutY="195.0" prefHeight="17.0" prefWidth="443.0" text="Postal Code : " textFill="#1f2d3a">
+                                    <Label id="backtext" fx:id="profilepostalcode" alignment="CENTER" layoutX="4.0" layoutY="195.0" prefHeight="17.0" prefWidth="443.0" text="Postal Code : " textFill="#1F2D3A">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
@@ -1256,7 +820,7 @@
                               <Pane id="TransactionActivity" fx:id="profiletransactionactivitypane" layoutX="65.0" layoutY="51.0" prefHeight="344.0" prefWidth="451.0" style="-fx-background-color: #adb386; -fx-background-radius: 20px;" visible="false">
                                  <children>
                                     <PieChart fx:id="profilepiechart" layoutX="7.0" layoutY="18.0" prefHeight="273.0" prefWidth="436.0" />
-                                    <Label fx:id="profiletotaltransactions" alignment="CENTER" layoutX="4.0" layoutY="297.0" prefHeight="17.0" prefWidth="443.0" text="Total Transactions : " textFill="#1f2d3a">
+                                    <Label id="backtext" fx:id="profiletotaltransactions" alignment="CENTER" layoutX="4.0" layoutY="297.0" prefHeight="17.0" prefWidth="443.0" text="Total Transactions : " textFill="#1F2D3A">
                                        <font>
                                           <Font name="Kalpurush" size="17.0" />
                                        </font>
@@ -1265,8 +829,223 @@
                               </Pane>
                            </children>
                         </Pane>
-                        <JFXButton fx:id="backtodatabase" layoutX="28.0" layoutY="74.0" onAction="#EnteringDatabaseShowingPane" prefHeight="27.0" prefWidth="76.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Back" visible="false" />
+                        <JFXButton id="menubtn" fx:id="backtodatabase" layoutX="28.0" layoutY="74.0" onAction="#EnteringDatabaseShowingPane" prefHeight="27.0" prefWidth="76.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Back" visible="false" />
                      </children></Pane>
+                  <Pane id="backline" fx:id="sendmoneypane" layoutX="14.0" layoutY="13.0" prefHeight="494.0" prefWidth="645.0" visible="false">
+                     <children>
+                        <Label id="backtext" alignment="CENTER" layoutX="8.0" layoutY="5.0" prefHeight="42.0" prefWidth="628.0" text="Send Money">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Line id="paneline" endX="100.0" layoutX="323.0" layoutY="47.0" startX="-100.0" />
+                        <Label id="backtext" alignment="CENTER" layoutX="35.0" layoutY="66.0" prefHeight="42.0" prefWidth="188.0" text="Account ID : ">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <TextField id="frontcolor" fx:id="sendmoneyaccountid" layoutX="208.0" layoutY="68.0" prefHeight="32.0" prefWidth="414.0" />
+                        <Line id="paneline" endX="313.00006103515625" layoutX="309.0" layoutY="100.0" startX="-100.0" />
+                        <Label id="backtext" alignment="CENTER" layoutX="520.0" layoutY="121.0" prefHeight="42.0" prefWidth="58.0" text="BDT">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" alignment="CENTER" layoutX="14.0" layoutY="128.0" prefHeight="42.0" prefWidth="188.0" text="Amount : ">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <TextField id="frontcolor" fx:id="sendmoneyamount" layoutX="168.0" layoutY="126.0" prefHeight="32.0" prefWidth="334.0" />
+                        <Line id="paneline" endX="240.00006103515625" layoutX="269.0" layoutY="163.0" startX="-100.0" />
+                        <JFXButton id="revmenubtn" fx:id="sendbtn" layoutX="182.0" layoutY="358.0" onAction="#sendMoney" prefHeight="34.0" prefWidth="306.0" text="SEND" />
+                        <Label fx:id="sendmoneyaccountiderrormsg" layoutX="187.0" layoutY="256.0" style="-fx-text-fill: red;" text="*Such Account ID Doesn't Exist" visible="false">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="sendmoneyamounterrormsg" layoutX="164.0" layoutY="256.0" style="-fx-text-fill: red;" text="*Insufficient Balance or Invalid Amount" visible="false">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="sendmoneysuccessmsg" layoutX="219.0" layoutY="271.0" style="-fx-text-fill: green;" text="Message Sent Successfully" visible="false">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ProgressIndicator fx:id="sendprogress" layoutX="313.0" layoutY="348.0" visible="false" />
+                     </children>
+                  </Pane>
+                  <Pane id="backline" fx:id="sendmoneypane1" layoutX="14.0" layoutY="13.0" prefHeight="494.0" prefWidth="645.0" visible="false">
+                     <children>
+                        <Label id="backtext" alignment="CENTER" layoutX="8.0" layoutY="5.0" prefHeight="42.0" prefWidth="628.0" text="Payment">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Line id="paneline" endX="100.0" layoutX="323.0" layoutY="47.0" startX="-100.0" />
+                        <Label id="backtext" alignment="CENTER" layoutX="35.0" layoutY="66.0" prefHeight="42.0" prefWidth="188.0" text="Account ID : ">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <TextField id="frontcolor" fx:id="sendmoneyaccountid1" layoutX="208.0" layoutY="68.0" prefHeight="32.0" prefWidth="414.0" />
+                        <Line id="paneline" endX="313.00006103515625" layoutX="309.0" layoutY="100.0" startX="-100.0" />
+                        <Label id="backtext" alignment="CENTER" layoutX="520.0" layoutY="121.0" prefHeight="42.0" prefWidth="58.0" text="BDT">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" alignment="CENTER" layoutX="14.0" layoutY="128.0" prefHeight="42.0" prefWidth="188.0" text="Amount : ">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <TextField id="frontcolor" fx:id="sendmoneyamount1" layoutX="168.0" layoutY="126.0" prefHeight="32.0" prefWidth="334.0" />
+                        <Line id="paneline" endX="240.00006103515625" layoutX="269.0" layoutY="163.0" startX="-100.0" />
+                        <JFXButton id="revmenubtn" fx:id="sendbtn1" layoutX="182.0" layoutY="358.0" onAction="#payment" prefHeight="34.0" prefWidth="306.0" text="SEND" />
+                        <Label fx:id="sendmoneyaccountiderrormsg1" layoutX="187.0" layoutY="256.0" style="-fx-text-fill: red;" text="*Such Account ID Doesn't Exist" visible="false">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="sendmoneyamounterrormsg1" layoutX="164.0" layoutY="256.0" style="-fx-text-fill: red;" text="*Insufficient Balance or Invalid Amount" visible="false">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="sendmoneysuccessmsg1" layoutX="219.0" layoutY="271.0" style="-fx-text-fill: green;" text="Message Sent Successfully" visible="false">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ProgressIndicator fx:id="sendprogress1" layoutX="313.0" layoutY="348.0" visible="false" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="rechargepane" layoutX="14.0" layoutY="13.0" prefHeight="494.0" prefWidth="645.0" visible="false">
+                     <children>
+                        <Label id="backtext" alignment="CENTER" layoutX="5.0" layoutY="6.0" prefHeight="52.0" prefWidth="597.0" text="Mobile Recharge">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Line endX="183.00006103515625" layoutX="304.0" layoutY="58.0" startX="-184.20001220703125" />
+                        <Label id="backtext" alignment="CENTER" layoutX="5.0" layoutY="80.0" prefHeight="52.0" prefWidth="203.0" text="Phone Number : ">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField id="frontcolor" fx:id="rechargephonenumber" layoutX="95.0" layoutY="140.0" prefHeight="43.0" prefWidth="348.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Line endX="302.0" endY="-0.20001220703125" layoutX="141.0" layoutY="183.0" startX="-46.0" />
+                        <JFXButton id="revmenubtn" layoutX="167.0" layoutY="372.0" onAction="#mobileRecharge" prefHeight="32.0" prefWidth="290.0" text="Recharge" />
+                        <Label fx:id="invaliderrmsg" alignment="CENTER" layoutY="301.0" prefHeight="17.0" prefWidth="607.0" style="-fx-text-fill: red;" text="*Invalid Phone Number" visible="false">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="operatorinvaliderrmsg" alignment="CENTER" layoutY="309.0" prefHeight="17.0" prefWidth="607.0" style="-fx-text-fill: red;" text="*This Operator is not Available" visible="false">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="rechargesuccessmsg" alignment="CENTER" layoutY="318.0" prefHeight="17.0" prefWidth="607.0" style="-fx-text-fill: green;" text="Mobile Recharge Successfully" visible="false">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" alignment="CENTER" layoutX="5.0" layoutY="187.0" prefHeight="52.0" prefWidth="140.0" text="Amount : ">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField id="frontcolor" fx:id="rechargeamount" layoutX="14.0" layoutY="228.0" prefHeight="36.0" prefWidth="429.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Line endX="302.0" endY="-0.20001220703125" layoutX="141.0" layoutY="271.0" startX="-127.0" />
+                        <Label fx:id="invaliderrmsg1" alignment="CENTER" layoutY="309.0" prefHeight="17.0" prefWidth="607.0" style="-fx-text-fill: red;" text="*Insufficient Amount or Invalid Amount" visible="false">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" alignment="CENTER" layoutX="16.0" layoutY="132.0" prefHeight="52.0" prefWidth="59.0" text="+880">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" alignment="CENTER" layoutX="458.0" layoutY="213.0" prefHeight="52.0" prefWidth="59.0" text="BDT">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="usertranshist" layoutX="14.0" layoutY="13.0" prefHeight="494.0" prefWidth="646.0" visible="false">
+                     <children>
+                        <Label id="backtext" alignment="CENTER" layoutX="-4.0" layoutY="-5.0" prefHeight="54.0" prefWidth="628.0" text="Transaction History">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Line id="paneline" endX="332.60003662109375" layoutX="310.0" layoutY="49.0" startX="-299.79998779296875" />
+                        <TableView fx:id="usertable" layoutX="8.0" layoutY="62.0" prefHeight="422.0" prefWidth="637.0">
+                           <columns>
+                              <TableColumn fx:id="userindexcol" prefWidth="70.40008544921875" text="Index" />
+                              <TableColumn fx:id="useraccountidcol" prefWidth="73.60003662109375" text="Account ID" />
+                              <TableColumn fx:id="usernamecol" prefWidth="96.0" text="User Name" />
+                              <TableColumn fx:id="useramountcol" prefWidth="98.4000244140625" text="Amount(BDT)" />
+                              <TableColumn fx:id="userchargecol" prefWidth="82.39996337890625" text="Charge" />
+                              <TableColumn fx:id="userdatecol" prefWidth="77.60003662109375" text="Date" />
+                              <TableColumn fx:id="usertranscol" prefWidth="135.99993896484375" text="Transaction Type" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane id="changepassword" fx:id="changepasswordpane1" layoutX="14.0" layoutY="13.0" prefHeight="494.0" prefWidth="646.0" visible="false">
+                     <children>
+                        <Label id="backtext" alignment="CENTER" layoutX="55.0" layoutY="43.0" text="Password : ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField id="frontcolor" fx:id="userchangepass1" layoutX="53.0" layoutY="84.0" prefHeight="38.0" prefWidth="540.0" />
+                        <Line endX="439.20001220703125" layoutX="153.0" layoutY="122.0" startX="-100.0" />
+                        <JFXButton id="revmenubtn" layoutX="211.0" layoutY="338.0" onAction="#userchangepass" prefHeight="46.0" prefWidth="239.0" text="Set Password" />
+                        <Label fx:id="passworderrmsg1" layoutX="103.0" layoutY="234.0" style="-fx-text-fill: red;" text="*minimum 6 character required ans spaces are not allowed" visible="false">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="passwordsuccessmsg" layoutX="216.0" layoutY="234.0" style="-fx-text-fill: green;" text="password changed successfully" visible="false">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Themepane" layoutX="14.0" layoutY="13.0" prefHeight="494.0" prefWidth="646.0" visible="false">
+                     <children>
+                        <Pane fx:id="pane1" layoutX="77.0" layoutY="39.0" onMouseClicked="#inTheme1" prefHeight="35.0" prefWidth="35.0" style="-fx-border-color: black; -fx-background-color: white;" />
+                        <Pane fx:id="pane2" layoutX="77.0" layoutY="95.0" onMouseClicked="#inTheme2" prefHeight="35.0" prefWidth="35.0" style="-fx-border-color: black; -fx-background-color: white;" />
+                        <Label layoutX="141.0" layoutY="39.0" text="Theme 1">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="141.0" layoutY="95.0" text="Theme 2">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <JFXButton id="revmenubtn" layoutX="188.0" layoutY="218.0" onAction="#changeTheme" prefHeight="25.0" prefWidth="188.0" text="Set Theme" />
+                     </children>
+                  </Pane>
                </children>
             </Pane>
             <ImageView fitHeight="46.0" fitWidth="212.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -1274,33 +1053,1042 @@
                   <Image url="@Logo.png" />
                </image>
             </ImageView>
-            <Label fx:id="loginusernamelabel" alignment="CENTER" layoutX="240.0" layoutY="25.0" prefHeight="34.0" prefWidth="367.0" text="Username" textFill="WHITE">
+            <Label id="fronttext" fx:id="loginusernamelabel" alignment="CENTER" layoutX="240.0" layoutY="25.0" prefHeight="34.0" prefWidth="367.0" text="Username" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="666.0" layoutY="11.0" prefHeight="30.0" prefWidth="211.0" text="Current Balance" textFill="WHITE">
+            <Label id="fronttext" fx:id="profilecurrentbalancelabel" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="666.0" layoutY="11.0" prefHeight="30.0" prefWidth="211.0" text="Current Balance" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label fx:id="currentbalancelabel" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="666.0" layoutY="37.0" prefHeight="30.0" prefWidth="211.0" text="10000 BDT" textFill="WHITE">
+            <Label id="fronttext" fx:id="currentbalancelabel" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="666.0" layoutY="37.0" prefHeight="30.0" prefWidth="211.0" text="10000 BDT" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="198.0" layoutY="637.0" prefHeight="30.0" prefWidth="710.0" text="Contact:   joyhassan877@gmail.com" textFill="WHITE">
+            <Label id="fronttext" fx:id="contactemailmsg" alignment="CENTER" contentDisplay="CENTER" layoutX="198.0" layoutY="637.0" prefHeight="30.0" prefWidth="710.0" text="Contact: prokash21045@gmail.com" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="198.0" layoutY="660.0" prefHeight="22.0" prefWidth="710.0" text="© 2022-2050 ProKash All Rights Reserved" textFill="WHITE">
+            <Label id="fronttext" fx:id="copyrightmsg" alignment="CENTER" contentDisplay="CENTER" layoutX="198.0" layoutY="660.0" prefHeight="22.0" prefWidth="710.0" text="© 2022-2050 ProKash All Rights Reserved" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Label>
-            <Line endX="785.0000610351562" endY="-7.62939453125E-6" layoutX="115.0" layoutY="94.0" startX="-115.00001525878906" startY="-7.62939453125E-6" stroke="#979797" strokeWidth="5.0" />
+            <Line id="frontpaneline" fx:id="line9" endX="785.0000610351562" endY="-7.62939453125E-6" layoutX="115.0" layoutY="94.0" startX="-115.00001525878906" startY="-7.62939453125E-6" stroke="#979797" strokeWidth="5.0" />
          </children>
       </AnchorPane>
+      <Pane id="AgentMode" fx:id="agentmodepane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #6FC9D4;" visible="false">
+         <children>
+            <Label layoutX="394.0" layoutY="24.0" text="Agent" textFill="#1F2D3A">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="431.0" layoutY="75.0" startX="-100.0" stroke="#1F2D3A" strokeWidth="3.0" />
+            <Pane layoutX="137.0" layoutY="110.0" opacity="0.65" prefHeight="502.0" prefWidth="622.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 5;">
+               <children>
+                  <TextField fx:id="agentid" alignment="CENTER" layoutX="96.0" layoutY="97.0" prefHeight="40.0" prefWidth="429.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Line fx:id="agentidline" endX="321.00006103515625" layoutX="200.0" layoutY="137.0" startX="-100.0" />
+                  <TextField fx:id="agentpin" alignment="CENTER" layoutX="96.0" layoutY="218.0" prefHeight="40.0" prefWidth="429.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Line fx:id="agentpinline" endX="504.40008544921875" endY="260.79998779296875" layoutX="14.0" layoutY="-3.0" startX="81.99998474121094" startY="261.0" />
+                  <Label fx:id="agentpinlabel" alignment="CENTER" layoutX="-1.0" layoutY="182.0" prefHeight="21.0" prefWidth="622.0" text="PIN">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="agentidlabel" alignment="CENTER" layoutX="1.0" layoutY="52.0" prefHeight="27.0" prefWidth="622.0" text="Agent Id">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label id="menubtn" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="361.0" onMouseClicked="#EnteringAgentModeBankingPane" prefHeight="46.0" prefWidth="203.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" stylesheets="@Design.css" text="Enter" textFill="#1F2D3A" />
+                  <Pane id="agenterrormessage" fx:id="agenterrormessage" layoutX="167.0" layoutY="307.0" prefHeight="54.0" prefWidth="328.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="64.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@ErrorSign.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="78.0" layoutY="10.0" prefHeight="34.0" prefWidth="223.0" text="You are not an Agent" textFill="#ff0000">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label fx:id="invalidid" layoutX="231.0" layoutY="319.0" style="-fx-text-fill: red;" text="*No such Id exists" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="invalidid1" layoutX="248.0" layoutY="304.0" style="-fx-text-fill: red;" text="*Incorrect Pin" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXButton id="menubtn" fx:id="backtotoppane" layoutX="222.0" layoutY="432.0" onAction="#backtoTop" prefHeight="27.0" prefWidth="169.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20; -fx-background-radius: 20;" stylesheets="@Design.css" text="Back" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane id="AgentModeBanking" fx:id="agentmodebankingpane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #6FC9D4;" visible="false">
+         <children>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="321.0" onAction="#EnteringDepositPane" prefHeight="138.0" prefWidth="380.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20px;" text="Deposit" textFill="#9e9e9e">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="261.0" layoutY="151.0" onAction="#EnteringAgentChangePasswordPane" prefHeight="138.0" prefWidth="380.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20px;" text="Change Password" textFill="#9e9e9e">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="backtoagentmodepane" layoutX="361.0" layoutY="620.0" onAction="#backtoagentmode" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: #1F2D3A; -fx-background-radius: 20; -fx-text-fill: #9e9e9e;" text="Back" />
+            <Label fx:id="agentbalance" layoutX="315.0" layoutY="50.0" style="-fx-text-fill: black;" text="Balance : ">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane id="changepassword" fx:id="changepasswordpane" prefHeight="700.0" prefWidth="902.0" style="-fx-background-color: #6FC9D4;" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="178.0" layoutY="133.0" style="-fx-text-fill: #1f2d3a;" text="PIN : ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="agentchangepass" layoutX="178.0" layoutY="184.0" prefHeight="38.0" prefWidth="540.0" style="-fx-background-color: #6FC9D4;" />
+            <Line endX="439.20001220703125" layoutX="279.0" layoutY="222.0" startX="-100.0" />
+            <JFXButton id="revmenubtn" layoutX="332.0" layoutY="401.0" onAction="#agentChangePassword" prefHeight="46.0" prefWidth="239.0" stylesheets="@Theme1.css" text="Set Password" />
+            <Label fx:id="passworderrmsg" layoutX="251.0" layoutY="312.0" style="-fx-text-fill: red;" text="*Minimum 6 DIGITS required and only digits are allowed" visible="false">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane id="BankingDeposit" fx:id="bankingdepositpane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #6FC9D4;" stylesheets="@Banking.css" visible="false">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="26.0" prefHeight="46.0" prefWidth="905.0" text="Deposit" textFill="#1F2D3A">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <Line endX="332.60003662109375" endY="7.62939453125E-6" layoutX="337.0" layoutY="80.0" startX="-100.0" stroke="#1F2D3A" strokeWidth="3.0" />
+            <TextField fx:id="depositamounttextfield" layoutX="120.0" layoutY="248.0" prefHeight="46.0" prefWidth="407.0" style="-fx-background-color: #6FC9D4; -fx-text-fill: black;">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <Line fx:id="depositaccountidline" endX="263.00006103515625" endY="-1.0" layoutX="257.0" layoutY="204.0" startX="-130.0" startY="-1.0" stroke="#1F2D3A" />
+            <Label layoutX="536.0" layoutY="262.0" prefHeight="28.0" prefWidth="52.0" text="BDT" textFill="#1F2D3A">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="depositamountlabel" layoutX="127.0" layoutY="221.0" prefHeight="27.0" prefWidth="64.0" text="Amount" textFill="#1F2D3A">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXButton id="bankingactionbtn" fx:id="depostibtn" layoutX="120.0" layoutY="330.0" onAction="#Deposit" prefHeight="40.0" prefWidth="251.0" style="-fx-border-radius: 20px; -fx-border-color: #1F2D3A; -fx-background-radius: 20px;" text="Deposit">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <Pane id="Error Message" fx:id="depositerrormessage" layoutX="286.0" layoutY="464.0" prefHeight="54.0" prefWidth="334.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
+               <children>
+                  <ImageView fitHeight="46.0" fitWidth="64.0" layoutX="6.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ErrorSign.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="79.0" layoutY="11.0" prefHeight="29.0" prefWidth="232.0" text="Enter a valid amount" textFill="RED">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane id="Success Message" fx:id="depositsuccessmessage" layoutX="288.0" layoutY="450.0" prefHeight="52.0" prefWidth="328.0" style="-fx-background-color: #B6F1D4; -fx-background-radius: 20px;" visible="false">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="42.0" layoutX="19.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@success.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="70.0" layoutY="8.0" prefHeight="36.0" prefWidth="232.0" text="Successfully Depositted" textFill="GREEN">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXButton id="bankingactionbtn" fx:id="depositpanebackbtn" layoutX="354.0" layoutY="570.0" onAction="#BackFromEnteringDepositPane" prefHeight="38.0" prefWidth="194.0" style="-fx-border-radius: 20px; -fx-border-color: #1F2D3A; -fx-background-radius: 20px;" text="Back">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="depositaccountidlabel" layoutX="127.0" layoutY="123.0" prefHeight="27.0" prefWidth="94.0" text="Account Id" textFill="#1F2D3A">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="depositaccountidtextfield" layoutX="120.0" layoutY="150.0" prefHeight="46.0" prefWidth="407.0" style="-fx-background-color: #6FC9D4; -fx-text-fill: black;">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <Line fx:id="depositamountline" endX="527.6000366210938" endY="289.0" layoutX="-8.0" layoutY="11.0" startX="137.20001220703125" startY="289.0" stroke="#1F2D3A" />
+            <Pane id="Error Message 2" fx:id="depositerrormessage1" layoutX="275.0" layoutY="449.0" prefHeight="54.0" prefWidth="334.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
+               <children>
+                  <ImageView fitHeight="46.0" fitWidth="64.0" layoutX="6.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ErrorSign.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="79.0" layoutY="11.0" prefHeight="29.0" prefWidth="232.0" text="No Account Id Found" textFill="RED">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label fx:id="limitcrossed" layoutX="354.0" layoutY="461.0" style="-fx-text-fill: red;" text="*Your limit is crossed " visible="false">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane id="AdministrationMode" fx:id="administrationpane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #6FC9D4;" visible="false">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="25.0" prefHeight="40.0" prefWidth="900.0" text="Admin" textFill="#1F2D3A">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Line endX="246.00006103515625" endY="7.62939453125E-6" layoutX="450.0" layoutY="78.0" startX="-248.3999786376953" startY="7.62939453125E-6" stroke="#1F2D3A" strokeWidth="3.0" />
+            <Pane layoutX="159.0" layoutY="148.0" opacity="0.65" prefHeight="472.0" prefWidth="585.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 10; -fx-border-color: black;">
+               <children>
+                  <TextField fx:id="adminpintextfield" alignment="CENTER" layoutX="14.0" layoutY="180.0" prefHeight="40.0" prefWidth="558.0" style="-fx-background-color: white; -fx-text-fill: black;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="adminidlabel" alignment="CENTER" layoutX="1.0" layoutY="32.0" prefHeight="22.0" prefWidth="585.0" text="Admin Id" textFill="#1F2D3A">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adminpinlabel" alignment="CENTER" layoutY="151.0" prefHeight="21.0" prefWidth="585.0" text="PIN" textFill="#1F2D3A">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="adminidtextfield" alignment="CENTER" layoutX="10.0" layoutY="76.0" prefHeight="40.0" prefWidth="564.0" style="-fx-background-color: white; -fx-text-fill: black;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Line fx:id="adminidline" endX="397.60003662109375" layoutX="137.0" layoutY="220.0" startX="-63.19996643066406" />
+                  <Line fx:id="adminpinline" endX="586.4000244140625" endY="260.79998779296875" layoutX="-55.0" layoutY="-144.0" startX="132.0000457763672" startY="260.79998779296875" />
+                  <Pane id="adminerrormessage" fx:id="adminerrormessage" layoutX="156.0" layoutY="276.0" prefHeight="54.0" prefWidth="274.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="64.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@ErrorSign.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="78.0" layoutY="10.0" prefHeight="34.0" prefWidth="188.0" text="You are not Admin" textFill="#ff0000">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label id="menubtn" alignment="CENTER" contentDisplay="CENTER" layoutX="199.0" layoutY="405.0" onMouseClicked="#EnteringAdminChoicePane" prefHeight="46.0" prefWidth="203.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" stylesheets="@Design.css" text="Enter" textFill="#1F2D3A" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane id="frontcolor" fx:id="adminchoicepane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-radius: 0;" stylesheets="@Theme1.css" visible="false">
+         <children>
+            <Label id="fronttext" alignment="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="53.0" prefWidth="894.0" text="Admin Console">
+               <font>
+                  <Font name="Cooper Black" size="31.0" />
+               </font>
+            </Label>
+            <Pane id="backcolor" fx:id="agentsignup" layoutX="229.0" layoutY="68.0" prefHeight="629.0" prefWidth="664.0" style="-fx-background-radius: 20;">
+               <children>
+                  <Pane id="frontcolor" fx:id="agentsignup1" layoutX="10.0" layoutY="129.0" prefHeight="494.0" prefWidth="638.0">
+                     <children>
+                        <Label id="backtext" layoutX="45.0" layoutY="48.0" prefHeight="32.0" prefWidth="140.0" text="First Name : ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" layoutX="45.0" layoutY="107.0" prefHeight="32.0" prefWidth="160.0" text="Last Name : ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" layoutX="45.0" layoutY="170.0" prefHeight="32.0" prefWidth="140.0" text="Email : ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" layoutX="45.0" layoutY="229.0" prefHeight="32.0" prefWidth="188.0" text="Phone Number : ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" layoutX="45.0" layoutY="289.0" prefHeight="32.0" prefWidth="140.0" text="NID : ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" layoutX="45.0" layoutY="354.0" prefHeight="32.0" prefWidth="140.0" text="Address : ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <TextField id="frontcolor" fx:id="agentfirstname" alignment="TOP_LEFT" layoutX="233.0" layoutY="52.0" onKeyTyped="#agentfirstnameonkeytyped" prefHeight="25.0" prefWidth="379.0" />
+                        <TextField id="frontcolor" fx:id="agentlastname" alignment="TOP_LEFT" layoutX="233.0" layoutY="110.0" onKeyTyped="#agentlastnameonkeytyped" prefHeight="25.0" prefWidth="379.0" />
+                        <Line endX="277.5999755859375" layoutX="334.0" layoutY="77.0" startX="-100.0" />
+                        <Line endX="278.5999755859375" layoutX="333.0" layoutY="134.0" startX="-100.0" />
+                        <Line endX="137.5999755859375" endY="-3.0517578125E-5" layoutX="334.0" layoutY="199.0" startX="-100.0" />
+                        <Line endX="281.69989013671875" endY="-3.0517578125E-5" layoutX="334.0" layoutY="260.0" startX="-27.39996337890625" />
+                        <Label id="backtext" layoutX="233.0" layoutY="230.0" text="+880">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Line endX="615.0" endY="322.24005126953125" startX="238.60003662109375" startY="322.2400207519531" />
+                        <Line endX="622.0000610351562" endY="375.84002685546875" layoutX="-5.0" layoutY="69.0" startX="237.800048828125" startY="375.8399963378906" />
+                        <TextField id="frontcolor" fx:id="agentemail" alignment="TOP_LEFT" layoutX="234.0" layoutY="172.0" prefHeight="25.0" prefWidth="232.0" />
+                        <TextField id="frontcolor" fx:id="agentphonenumber" alignment="TOP_LEFT" layoutX="306.0" layoutY="233.0" onKeyTyped="#agentphonenumberonkeytype" prefHeight="25.0" prefWidth="314.0" />
+                        <TextField id="frontcolor" fx:id="agentnid" alignment="TOP_LEFT" layoutX="238.0" layoutY="292.0" onKeyTyped="#agentnidonkeytype" prefHeight="25.0" prefWidth="380.0" />
+                        <TextField id="frontcolor" fx:id="agentaddress" alignment="TOP_LEFT" layoutX="233.0" layoutY="357.0" prefHeight="87.0" prefWidth="380.0" />
+                        <JFXButton id="bankingactionbtn" layoutX="248.0" layoutY="456.0" onAction="#agentsignupsubmit" onKeyTyped="#agentsignupsubmit" prefHeight="32.0" prefWidth="211.0" text="Submit" />
+                        <Label fx:id="agentfirsterror" alignment="CENTER" layoutX="233.0" layoutY="22.0" prefHeight="17.0" prefWidth="378.0" text="* Empty entry or invalid Characters" textFill="RED" visible="false" />
+                        <Label fx:id="agentlasterror" alignment="CENTER" layoutX="233.0" layoutY="90.0" prefHeight="17.0" prefWidth="380.0" text="* Empty entry or invalid Characters" textFill="RED" visible="false" />
+                        <Label fx:id="agentemailerror" alignment="CENTER" layoutX="233.0" layoutY="153.0" prefHeight="17.0" prefWidth="239.0" text="* Invalid Email" textFill="RED" visible="false" />
+                        <Label fx:id="agentphoneerror" alignment="CENTER" layoutX="307.0" layoutY="213.0" prefHeight="17.0" prefWidth="306.0" text="* Invalid Phone Number" textFill="RED" visible="false" />
+                        <Label fx:id="agentniderror" alignment="CENTER" layoutX="233.0" layoutY="280.0" prefHeight="17.0" prefWidth="386.0" text="* Invalid Nid" textFill="RED" visible="false" />
+                        <Label fx:id="agentaddresserror" alignment="CENTER" layoutX="233.0" layoutY="337.0" prefHeight="17.0" prefWidth="378.0" text="* Empty Entry" textFill="RED" visible="false" />
+                        <Label id="backtext" layoutX="481.0" layoutY="157.0" text="\@gmail.com">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label id="fronttext" alignment="CENTER" layoutY="26.0" prefHeight="47.0" prefWidth="637.0" text="Sign Up">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Line id="frontpaneline" endX="242.00006103515625" endY="7.62939453125E-6" layoutX="344.0" layoutY="80.0" startX="-247.59999084472656" startY="7.62939453125E-6" />
+                  <Pane id="frontcolor" fx:id="agentaccountsuccessmsg" layoutX="60.0" layoutY="256.0" prefHeight="87.0" prefWidth="521.0" visible="false">
+                     <children>
+                        <Label layoutX="275.0" layoutY="153.0" />
+                        <Label alignment="CENTER" layoutX="-4.0" layoutY="25.0" prefHeight="35.0" prefWidth="529.0" style="-fx-text-fill: green;" text="Agent Account Created Successfully">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label text="Label" />
+               </children>
+            </Pane>
+            <GridPane layoutX="3.0" layoutY="64.0" prefHeight="636.0" prefWidth="223.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXButton id="adminbtn" onAction="#EnteringDatabaseFilteringPane" prefHeight="46.0" prefWidth="273.0" text="Database">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="adminbtn" onAction="#VisualizationFilter" prefHeight="46.0" prefWidth="273.0" text="Analysis" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="adminbtn" onAction="#agentinformtaion" prefHeight="46.0" prefWidth="263.0" text="Agent Infromation" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="adminbtn" onAction="#AgentSignUp" prefHeight="46.0" prefWidth="273.0" text="Create Agent Id" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="adminbtn" onAction="#updateAgentBalance" prefHeight="46.0" prefWidth="273.0" text="Update Agent Balance" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="adminbtn" onAction="#adminlogout" prefHeight="46.0" prefWidth="273.0" text="Log Out" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane id="DatabaseShowingPane" fx:id="databaseshowingpane" layoutX="239.0" layoutY="85.0" prefHeight="598.0" prefWidth="646.0" stylesheets="@Theme1.css" visible="false">
+         <children>
+            <JFXTreeTableView fx:id="databasetable" layoutX="10.0" layoutY="8.0" prefHeight="524.0" prefWidth="628.0" style="-fx-background-color: #9E9E9E;" />
+            <JFXButton id="revmenubtn" layoutX="212.0" layoutY="543.0" onAction="#BackFromDatabaseShowingPane" prefHeight="35.0" prefWidth="223.0" stylesheets="@Theme1.css" text="Back" />
+         </children>
+      </Pane>
+      <Pane id="DatabaseFilteringPane" fx:id="databasefilteringpane" layoutX="239.0" layoutY="85.0" prefHeight="592.0" prefWidth="646.0" style="-fx-border-color: black; -fx-border-width: 5;" stylesheets="@Theme1.css" visible="false">
+         <children>
+            <Pane layoutX="14.0" layoutY="33.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databasename" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="4.0" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="96.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databasefathername" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="4.0" text="Father's Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="163.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databaseemail" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="4.0" text="Email">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="229.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databasenid" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="4.0" text="NID">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Pane layoutX="218.0" layoutY="33.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databaseaccountid" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="4.0" text="Account Id">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Pane layoutX="218.0" layoutY="96.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databasemothername" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="4.0" text="Mother's Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Pane layoutX="218.0" layoutY="163.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databasephonenumber" layoutX="44.0" layoutY="29.0" prefHeight="35.0" prefWidth="140.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="4.0" text="Phone Number">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+                  <Pane layoutX="4.0" layoutY="64.0" prefHeight="77.0" prefWidth="188.0">
+                     <children>
+                        <TextField id="frontcolor" fx:id="databaseoccupation" layoutX="12.0" layoutY="29.0" prefHeight="35.0" prefWidth="158.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="14.0" layoutY="4.0" text="Occupation">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Line endX="67.4000244140625" layoutX="114.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="14.0" layoutY="38.0" text="+880" textFill="#1F2D3A">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="466.0" layoutY="96.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databasedistrict" layoutX="-10.0" layoutY="25.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="-11.0" layoutY="4.0" text="District">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="91.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+                  <Line endX="67.4000244140625" layoutX="85.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Pane layoutX="466.0" layoutY="163.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databasepostoffice" layoutX="-12.0" layoutY="25.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="-12.0" layoutY="4.0" text="Post Office">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="89.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Pane layoutX="466.0" layoutY="229.0" prefHeight="77.0" prefWidth="188.0">
+               <children>
+                  <TextField id="frontcolor" fx:id="databasepostalcode" layoutX="-11.0" layoutY="25.0" prefHeight="35.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="-11.0" layoutY="4.0" text="Postal Code">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="67.4000244140625" layoutX="90.0" layoutY="63.0" startX="-100.0" stroke="#1F2D3A" />
+               </children>
+            </Pane>
+            <Line endX="534.6000366210938" layoutX="108.0" layoutY="318.0" startX="-100.59999084472656" strokeWidth="10.0" />
+            <Line endX="214.800048828125" endY="-45.800048828125" layoutX="218.0" layoutY="357.0" startX="214.800048828125" startY="-350.55999755859375" strokeWidth="10.0" />
+            <Label id="backtext" layoutX="22.0" layoutY="1.0" text="Personal Information">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="451.0" layoutY="1.0" text="Address ">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="databaseyear" layoutX="22.0" layoutY="363.0" prefHeight="27.0" prefWidth="203.0" />
+            <Label id="backtext" layoutX="22.0" layoutY="323.0" text="Date Of Birth">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="databasemonth" layoutX="236.0" layoutY="363.0" prefHeight="27.0" prefWidth="203.0" />
+            <ComboBox fx:id="databaseday" layoutX="451.0" layoutY="363.0" prefHeight="27.0" prefWidth="188.0" />
+            <Line endX="533.7999877929688" endY="-3.0517578125E-5" layoutX="108.0" layoutY="410.0" startX="-101.00007629394531" startY="-3.0517578125E-5" strokeWidth="10.0" />
+            <ComboBox fx:id="databasegender" layoutX="22.0" layoutY="455.0" prefHeight="27.0" prefWidth="160.0" />
+            <ComboBox fx:id="databasereligion" layoutX="431.0" layoutY="455.0" prefHeight="27.0" prefWidth="160.0" />
+            <ComboBox fx:id="databaseincome" layoutX="232.0" layoutY="455.0" prefHeight="27.0" prefWidth="160.0" />
+            <ComboBox fx:id="databasemaritalstatus" layoutX="14.0" layoutY="535.0" prefHeight="27.0" prefWidth="160.0" />
+            <Label id="backtext" layoutX="22.0" layoutY="415.0" text="Gender">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="236.0" layoutY="415.0" text="Income">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="433.0" layoutY="415.0" text="Religion">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="19.0" layoutY="501.0" text="Marital Status">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <JFXButton id="revmenubtn" layoutX="328.0" layoutY="527.0" onAction="#EnteringDatabaseShowingPane" prefHeight="28.0" prefWidth="223.0" text="Search" />
+            <Label layoutX="453.0" layoutY="33.0" text="City">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField id="frontcolor" fx:id="databasecity" layoutX="451.0" layoutY="54.0" prefHeight="35.0" prefWidth="158.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane id="profile" fx:id="profilepane1" layoutX="239.0" layoutY="85.0" prefHeight="592.0" prefWidth="646.0" stylesheets="@Theme1.css" visible="false">
+         <children>
+            <Label id="backtext" fx:id="profilename1" alignment="CENTER" prefHeight="40.0" prefWidth="682.0" text="Peal Hassan" textFill="#1F2D3A">
+               <font>
+                  <Font name="Kalpurush" size="33.0" />
+               </font>
+            </Label>
+            <Line id="paneline" endX="261.00006103515625" endY="1.0" layoutX="341.0" layoutY="47.0" startX="-274.5999755859375" startY="1.0" stroke="#1F2D3A" />
+            <Circle id="paneline" fill="TRANSPARENT" layoutX="618.0" layoutY="48.0" radius="16.0" stroke="#1F2D3A" strokeType="INSIDE" />
+            <Circle id="paneline" fill="TRANSPARENT" layoutX="49.0" layoutY="48.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label id="backtext" fx:id="profilebalance1" alignment="CENTER" layoutX="-4.0" layoutY="63.0" prefHeight="17.0" prefWidth="682.0" text="Balance : 1000.25 BDT">
+               <font>
+                  <Font name="Kalpurush" size="15.0" />
+               </font>
+            </Label>
+            <Pane id="frontcolor" fx:id="profileouterpane1" layoutX="49.0" layoutY="111.0" prefHeight="409.0" prefWidth="585.0" style="-fx-background-radius: 20; -fx-border-color: black;">
+               <children>
+                  <Label id="backcolor" fx:id="profileouterpanelabel1" alignment="CENTER" prefHeight="38.0" prefWidth="585.0" style="-fx-background-radius: 20;" stylesheets="@Theme1.css" text="Personal Information" textFill="#9e9e9e">
+                     <font>
+                        <Font name="Kalpurush" size="25.0" />
+                     </font>
+                  </Label>
+                  <JFXButton id="slidebtn" layoutY="178.0" onAction="#profileanimationback2" prefHeight="54.0" prefWidth="52.0" text="&lt;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="slidebtn" layoutX="533.0" layoutY="178.0" onAction="#profileanimationnext2" prefHeight="54.0" prefWidth="52.0" text="&gt;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <Pane id="ProfilePersonalInformation" fx:id="profilepersonalinformationpane1" layoutX="65.0" layoutY="51.0" prefHeight="344.0" prefWidth="451.0" style="-fx-background-color: #b39b86; -fx-background-radius: 20px;">
+                     <children>
+                        <Label id="backtext" fx:id="profilefathername1" alignment="CENTER" layoutX="4.0" layoutY="35.0" prefHeight="17.0" prefWidth="443.0" text="Father's Name : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profilemothername1" alignment="CENTER" layoutY="69.0" prefHeight="25.0" prefWidth="451.0" text="Mother's Name : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profilegender1" alignment="CENTER" layoutX="4.0" layoutY="102.0" prefHeight="17.0" prefWidth="443.0" text="Gender : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profiledateofbirth1" alignment="CENTER" layoutX="4.0" layoutY="135.0" prefHeight="17.0" prefWidth="443.0" text="Date of Birth : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profilenationality1" alignment="CENTER" layoutX="4.0" layoutY="168.0" prefHeight="17.0" prefWidth="443.0" text="Nationality : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profilereligion1" alignment="CENTER" layoutX="4.0" layoutY="200.0" prefHeight="17.0" prefWidth="443.0" text="Religion : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profileoccupation1" alignment="CENTER" layoutX="4.0" layoutY="231.0" prefHeight="17.0" prefWidth="443.0" text="Occupation : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profileincome1" alignment="CENTER" layoutX="4.0" layoutY="264.0" prefHeight="17.0" prefWidth="443.0" text="Income : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profileage1" alignment="CENTER" layoutX="4.0" layoutY="295.0" prefHeight="17.0" prefWidth="443.0" text="Age : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profilenid1" alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="17.0" prefWidth="443.0" text="NID : ">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane id="ProfileAddress" fx:id="profileaddressinformationpane1" layoutX="65.0" layoutY="51.0" prefHeight="344.0" prefWidth="451.0" style="-fx-background-color: #7691ad; -fx-background-radius: 20px;" visible="false">
+                     <children>
+                        <Label id="backtext" fx:id="profilecity1" alignment="CENTER" layoutX="4.0" layoutY="92.0" prefHeight="17.0" prefWidth="443.0" text="City : " textFill="#1F2D3A">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profiledistrict1" alignment="CENTER" layoutX="-4.0" layoutY="127.0" prefHeight="25.0" prefWidth="451.0" text="District : " textFill="#1F2D3A">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profilepostoffice1" alignment="CENTER" layoutX="4.0" layoutY="160.0" prefHeight="17.0" prefWidth="443.0" text="Post Office : " textFill="#1F2D3A">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label id="backtext" fx:id="profilepostalcode1" alignment="CENTER" layoutX="4.0" layoutY="195.0" prefHeight="17.0" prefWidth="443.0" text="Postal Code : " textFill="#1F2D3A">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane id="TransactionActivity" fx:id="profiletransactionactivitypane1" layoutX="65.0" layoutY="51.0" prefHeight="344.0" prefWidth="451.0" style="-fx-background-color: #adb386; -fx-background-radius: 20px;" visible="false">
+                     <children>
+                        <PieChart fx:id="profilepiechart1" layoutX="7.0" layoutY="18.0" prefHeight="273.0" prefWidth="436.0" />
+                        <Label id="backtext" fx:id="profiletotaltransactions1" alignment="CENTER" layoutX="4.0" layoutY="297.0" prefHeight="17.0" prefWidth="443.0" text="Total Transactions : " textFill="#1F2D3A">
+                           <font>
+                              <Font name="Kalpurush" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <JFXButton id="menubtn" fx:id="backtodatabase1" layoutX="28.0" layoutY="74.0" onAction="#EnteringDatabaseShowingPane" prefHeight="27.0" prefWidth="76.0" style="-fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Back" visible="false" />
+            <JFXButton id="revmenubtn" layoutX="202.0" layoutY="541.0" onAction="#backtodatabase" prefHeight="38.0" prefWidth="274.0" text="Back to Database" />
+         </children>
+      </Pane>
+      <Pane id="FilteringChartPane" fx:id="filteringchartpane" layoutX="239.0" layoutY="85.0" prefHeight="592.0" prefWidth="646.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@Theme1.css" visible="false">
+         <children>
+            <JFXButton id="revmenubtn" layoutX="236.0" layoutY="502.0" onAction="#chart" prefHeight="38.0" prefWidth="211.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Filter" />
+            <ComboBox fx:id="charttypechoice" layoutX="26.0" layoutY="287.0" prefHeight="27.0" prefWidth="306.0" />
+            <ComboBox fx:id="fromyearchoice" layoutX="27.0" layoutY="99.0" prefHeight="27.0" prefWidth="203.0" />
+            <ComboBox fx:id="frommonthchoice" layoutX="240.0" layoutY="99.0" prefHeight="27.0" prefWidth="203.0" />
+            <ComboBox fx:id="fromdaychoice" layoutX="452.0" layoutY="99.0" prefHeight="27.0" prefWidth="188.0" />
+            <Label id="backtext" layoutX="27.0" layoutY="14.0" text="Date (yyyy/mm/dd)" textFill="#1F2D3A">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Line id="backline" endX="144.800048828125" layoutX="127.0" layoutY="50.0" startX="-100.0" stroke="#1F2D3A" />
+            <Label id="backtext" layoutX="27.0" layoutY="63.0" text="From : " textFill="#1F2D3A">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="27.0" layoutY="140.0" text="To : " textFill="#1F2D3A">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="toyearchoice" layoutX="26.0" layoutY="176.0" prefHeight="27.0" prefWidth="203.0" />
+            <ComboBox fx:id="tomonthchoice" layoutX="240.0" layoutY="176.0" prefHeight="27.0" prefWidth="203.0" />
+            <ComboBox fx:id="todaychoice" layoutX="452.0" layoutY="176.0" prefHeight="27.0" prefWidth="188.0" />
+            <Line id="backline" endX="623.2000122070312" endY="225.5999755859375" startX="27.000045776367188" startY="225.5999755859375" stroke="#1F2D3A" />
+            <Label id="backtext" layoutX="26.0" layoutY="246.0" text="Chart Type : " textFill="#1F2D3A">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="349.0" layoutY="246.0" text="Subject On : " textFill="#1F2D3A">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="subjectonchoice" layoutX="349.0" layoutY="287.0" prefHeight="27.0" prefWidth="290.0" />
+            <ComboBox fx:id="analysistypechoice" layoutX="27.0" layoutY="375.0" prefHeight="27.0" prefWidth="321.0" />
+            <Label id="backtext" layoutX="26.0" layoutY="334.0" text="Analysis Type : " textFill="#1F2D3A">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Pane fx:id="filteringchartpaneerrormessage" layoutX="142.0" layoutY="414.0" prefHeight="52.0" prefWidth="358.0" style="-fx-background-color: #E0BCBC; -fx-background-radius: 20px;" visible="false">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="75.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ErrorSign.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="91.0" layoutY="15.0" prefHeight="19.0" prefWidth="211.0" text="Date interval is imperfect" textFill="RED">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane id="ChartShowingPane" fx:id="chartshowingpane" layoutX="240.0" layoutY="85.0" prefHeight="592.0" prefWidth="645.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@ChartDesign.css" visible="false">
+         <children>
+            <LineChart fx:id="linechart" layoutX="7.0" layoutY="22.0" prefHeight="461.0" prefWidth="628.0" visible="false">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <BarChart fx:id="barchart" layoutX="4.0" layoutY="9.0" prefHeight="472.0" prefWidth="637.0" visible="false">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </BarChart>
+            <AreaChart fx:id="areachart" layoutX="5.0" layoutY="22.0" prefHeight="478.0" prefWidth="637.0" visible="false">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </AreaChart>
+            <StackedAreaChart fx:id="stackedareachart" layoutX="9.0" layoutY="10.0" prefHeight="472.0" prefWidth="628.0" visible="false">
+               <xAxis>
+                  <NumberAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </StackedAreaChart>
+            <StackedBarChart fx:id="stackedbarchart" layoutX="11.0" layoutY="9.0" prefHeight="472.0" prefWidth="628.0" visible="false">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </StackedBarChart>
+            <JFXButton layoutX="205.0" layoutY="528.0" onAction="#BackFromChartShowingPane" prefHeight="38.0" prefWidth="251.0" style="-fx-border-color: #1F2D3A; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Back" />
+         </children>
+      </Pane>
+      <Pane id="backcolor" fx:id="agentinformationpane" layoutX="240.0" layoutY="85.0" prefHeight="592.0" prefWidth="645.0" style="-fx-background-radius: 20;" stylesheets="@Theme1.css" visible="false">
+         <children>
+            <JFXTreeTableView fx:id="agenttable" layoutX="13.0" layoutY="69.0" prefHeight="516.0" prefWidth="622.0" />
+            <Label id="frontcolor" alignment="CENTER" layoutX="11.0" layoutY="9.0" prefHeight="47.0" prefWidth="628.0" text="Agents">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="agentprofilepane" layoutX="240.0" layoutY="85.0" prefHeight="592.0" prefWidth="645.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@Theme1.css" visible="false">
+         <children>
+            <Label id="backtext" fx:id="agentnamelabel" alignment="CENTER" layoutX="3.0" layoutY="16.0" prefHeight="46.0" prefWidth="645.0" text="Name">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Line id="backline" endX="276.00006103515625" layoutX="335.0" layoutY="62.0" startX="-288.79998779296875" />
+            <Label id="backtext" fx:id="agentbalancelabel" alignment="CENTER" layoutX="6.0" layoutY="77.0" prefHeight="17.0" prefWidth="637.0" text="Balance">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="46.0" layoutY="123.0" prefHeight="25.0" prefWidth="194.0" text="Email : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="46.0" layoutY="154.0" prefHeight="25.0" prefWidth="194.0" text="Phone Number : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="46.0" layoutY="188.0" prefHeight="25.0" prefWidth="194.0" text="NID: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="46.0" layoutY="221.0" prefHeight="25.0" prefWidth="194.0" text="Total amount Withdrawn : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="46.0" layoutY="254.0" prefHeight="25.0" prefWidth="188.0" text="Total Amount Depositted : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" layoutX="46.0" layoutY="284.0" prefHeight="25.0" prefWidth="194.0" style="-fx-font-weight: bold;" text="Transaction History : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" fx:id="agentemaillabel" layoutX="252.0" layoutY="123.0" prefHeight="25.0" prefWidth="358.0" text="Email : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" fx:id="agentphonenumberlabel" layoutX="252.0" layoutY="154.0" prefHeight="25.0" prefWidth="358.0" text="Email : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" fx:id="agentnidlabel" layoutX="252.0" layoutY="188.0" prefHeight="25.0" prefWidth="358.0" text="Email : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" fx:id="agentwithdrawlabel" layoutX="252.0" layoutY="221.0" prefHeight="25.0" prefWidth="358.0" text="Email : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label id="backtext" fx:id="agentdepositlabel" layoutX="252.0" layoutY="254.0" prefHeight="25.0" prefWidth="358.0" text="Email : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="agenttransactiontable" layoutX="46.0" layoutY="315.0" prefHeight="233.0" prefWidth="586.0">
+               <columns>
+                  <TableColumn fx:id="agenttransindexcol" prefWidth="92.0" text="Index" />
+                  <TableColumn fx:id="agenttransaccountidcol" prefWidth="102.4000244140625" text="Account Id" />
+                  <TableColumn fx:id="agenttranstypecol" prefWidth="114.4000244140625" text="Transaction Type" />
+                  <TableColumn fx:id="agenttransamountcol" prefWidth="124.0" text="Amount" />
+                  <TableColumn fx:id="agenttransdatecol" prefWidth="150.4000244140625" text="Date " />
+               </columns>
+            </TableView>
+            <JFXButton id="revmenubtn" fx:id="backtoagentdatabase" layoutX="196.0" layoutY="553.0" onAction="#BackToAgentInformation" prefHeight="25.0" prefWidth="251.0" text="Back" />
+         </children>
+      </Pane>
+      <Pane fx:id="updateagentbalancepane" layoutX="240.0" layoutY="85.0" prefHeight="592.0" prefWidth="645.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@Theme1.css" visible="false">
+         <children>
+            <Label id="backtext" layoutX="53.0" layoutY="90.0" text="Agent Id : ">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <TextField id="frontcolor" fx:id="agentupdateid" alignment="CENTER" layoutX="176.0" layoutY="95.0" prefHeight="25.0" prefWidth="429.0" />
+            <Line endX="304.00006103515625" layoutX="301.0" layoutY="120.0" startX="-125.0" />
+            <JFXButton id="revmenubtn" layoutX="189.0" layoutY="154.0" onAction="#agentbalanceProceed" prefHeight="25.0" prefWidth="232.0" text="Proceed" />
+            <Label id="backtext" fx:id="due" layoutX="53.0" layoutY="199.0" text="Due : " visible="false">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label id="backtext" fx:id="balance" layoutX="129.0" layoutY="199.0" prefHeight="17.0" prefWidth="477.0" text="Label" visible="false">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Pane fx:id="payorreceiveagentbalancepane" layoutX="54.0" layoutY="261.0" prefHeight="200.0" prefWidth="558.0" visible="false">
+               <children>
+                  <JFXButton id="revmenubtn" layoutX="21.0" layoutY="50.0" onAction="#pay" prefHeight="118.0" prefWidth="239.0" text="Pay">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="revmenubtn" layoutX="288.0" layoutY="50.0" onAction="#receive" prefHeight="118.0" prefWidth="239.0" text="Receive">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Label id="backtext" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="24.0" prefHeight="36.0" prefWidth="646.0" text="Update Agent Balance">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Pane fx:id="payagentupdatebalancepane" layoutX="53.0" layoutY="293.0" prefHeight="174.0" prefWidth="558.0" visible="false">
+               <children>
+                  <Label id="backtext" layoutX="22.0" layoutY="51.0" text="Amount : ">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField id="frontcolor" fx:id="payamount" alignment="CENTER" layoutX="138.0" layoutY="56.0" prefHeight="25.0" prefWidth="407.0" />
+                  <Line endX="276.39996337890625" endY="-3.0517578125E-5" layoutX="264.0" layoutY="81.0" startX="-125.0" />
+                  <JFXButton id="revmenubtn" layoutX="163.0" layoutY="111.0" onAction="#agentupdatepayamount" prefHeight="25.0" prefWidth="232.0" text="Proceed" />
+               </children>
+            </Pane>
+            <Pane fx:id="receiveagentupdatebalancepane" layoutX="44.0" layoutY="293.0" prefHeight="174.0" prefWidth="558.0" visible="false">
+               <children>
+                  <Label id="backtext" layoutX="22.0" layoutY="51.0" text="Amount : ">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField id="frontcolor" fx:id="receiveamount" alignment="CENTER" layoutX="138.0" layoutY="56.0" prefHeight="25.0" prefWidth="407.0" />
+                  <Line endX="276.39996337890625" endY="-3.0517578125E-5" layoutX="264.0" layoutY="81.0" startX="-125.0" />
+                  <JFXButton id="revmenubtn" layoutX="163.0" layoutY="111.0" onAction="#agentupdatereceiveamount" prefHeight="25.0" prefWidth="232.0" text="Proceed" />
+               </children>
+            </Pane>
+            <Label fx:id="payerrormsg" alignment="CENTER" layoutX="6.0" layoutY="517.0" prefHeight="17.0" prefWidth="637.0" style="-fx-text-fill: red;" text="*payment is not valid under 100 BDT or payment is enough" visible="false" />
+            <Label fx:id="receiveerrormsg" alignment="CENTER" layoutX="4.0" layoutY="534.0" prefHeight="17.0" prefWidth="637.0" style="-fx-text-fill: red;" text="*Received Amount is Enough" visible="false" />
+            <Label fx:id="paysuccessmsg" alignment="CENTER" layoutX="4.0" layoutY="525.0" prefHeight="17.0" prefWidth="637.0" style="-fx-text-fill: green;" text="payment is succussful" visible="false" />
+            <Label fx:id="receivesuccessmsg" alignment="CENTER" layoutX="7.0" layoutY="509.0" prefHeight="17.0" prefWidth="637.0" style="-fx-text-fill: green;" text="Received Successfully" visible="false" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

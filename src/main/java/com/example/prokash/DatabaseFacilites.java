@@ -21,9 +21,10 @@ public class DatabaseFacilites {
         }
         return databaselink;
     }
-    public void Insert(Map<String,String>data) {
 
-        String query = "INSERT INTO Demo.UserInformation (";
+    public void Insert(Map<String,String>data,String dat) {
+
+        String query = "INSERT INTO " + dat + " (";
         int cnt = 0;
         for(Map.Entry<String,String> e: data.entrySet()) {
             if(cnt == 0) query += e.getKey();
@@ -58,16 +59,16 @@ public class DatabaseFacilites {
             e.printStackTrace();
         }
     }
-    public int NumberOfUsers() throws SQLException {
-        String query = "SELECT COUNT(AccountId) From Demo.UserInformation";
+    public int NumberOfUsers(String data) throws SQLException {
+        String query = "SELECT COUNT(AccountId) From " + data;
         Statement statement = databaselink.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         int totaldata = 0;
         while(resultSet.next()) totaldata = resultSet.getInt(1);
         return totaldata;
     }
-    public boolean UserExist(String column,String Value) throws SQLException {
-        String query = "SELECT * FROM Demo.UserInformation WHERE " + column + " = " + Value;
+    public boolean UserExist(String column,String Value,String val) throws SQLException {
+        String query = "SELECT * FROM "+ val + " WHERE " + column + " = " + Value;
         Statement statement = databaselink.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         while(resultSet.next()) return true;
@@ -123,6 +124,7 @@ public class DatabaseFacilites {
         ResultSet resultSet = statement.executeQuery(query);
         Map<String,Double> map = new HashMap<String,Double>();
         while(resultSet.next()) {
+            if(resultSet.getString("Gender") == null) continue;
             if(!resultSet.getString("Gender").equals(gendertype)) continue;
             String str = resultSet.getString("AccountId");
             String query2 = "select * from Demo.R"+str;

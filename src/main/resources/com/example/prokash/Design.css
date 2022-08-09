@@ -29,7 +29,7 @@
     -fx-text-fill: white;
 }
 #menubtn:focused {
-    -fx-background-color: #2A2B42;
+    -fx-background-color: black;
     -fx-text-fill: white;
 }
 #logout:hover {

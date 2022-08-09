@@ -1,0 +1,183 @@
+#bankingbtn:hover {
+    -fx-text-fill: white;
+    -fx-font-size: 25px;
+    -fx-pref-width: 180;
+    -fx-pref-height: 130;
+}
+#bankingbtn {
+    -fx-background-color: #1F2D3A;
+    -fx-text-fill: #9E9E9E;
+    -fx-font-size: 20px;
+    -fx-background-radius: 20px;
+}
+#bankingactionbtn:hover {
+    -fx-background-color: #1F2D3A;
+    -fx-text-fill: #9E9E9E;
+}
+#bankingactionbtn {
+    -fx-border-color: #1F2D3A;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+#frontcolor {
+    -fx-background-color: #9E9E9E;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+#backcolor {
+    -fx-background-color: #1F2D3A;
+}
+#paneline {
+    -fx-stroke: #1F2D3A; // backcolor
+}
+#backtext {
+    -fx-text-fill:  #1F2D3A; // backcolor
+}
+#fronttext {
+    -fx-text-fill: #9E9E9E;
+    -fx-background-color: #1F2D3A;
+    -fx-background-radius: 20px;
+}
+#inputtext {
+    -fx-text-fill:  #1F2D3A;
+    -fx-background-color: #9E9E9E;
+
+}
+#slidebtn {
+    -fx-text-fill: #1F2D3A;
+}
+#menubtn {
+    -fx-text-fill: #1F2D3A;
+}
+#menubtn:hover {
+    -fx-background-color: #1F2D3A;
+    -fx-text-fill: #9E9E9E;
+}
+#revmenubtn {
+    -fx-text-fill: #9E9E9E;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-background-color: #1F2D3A;
+}
+#revmenubtn:hover {
+    -fx-background-color: #9E9E9E;
+    -fx-text-fill: #1F2D3A;
+    -fx-border-color: #1F2D3A;
+}
+#menubtn:focused {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+#frontpaneline {
+    -fx-stroke: #9E9E9E;
+}
+#profilepane {
+    -fx-background-color: #9E9E9E;
+    -fx-border-color: #1F2D3A;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+#adminbtn {
+    -fx-background-color: #1F2D3A;
+    -fx-border-color: black;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-text-fill: #9E9E9E;
+
+}
+#adminbtn:hover {
+    -fx-pref-width: 400;
+    -fx-pref-height: 200;
+}
+.combo-box {
+    -fx-background-color: #9E9E9E;
+    -fx-border-color: #1F2D3A;
+    -fx-border-radius: 20px;
+}
+.combo-box  .list-cell {
+    -fx-text-fill: #1F2D3A
+}
+
+.combo-box  .list-view .list-cell {
+    -fx-text-fill: #9E9E9E;
+    -fx-background-color: #1F2D3A;
+    -fx-border-color: #9E9E9E;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.combo-box .list-view {
+    -fx-background-color:#9E9E9E;
+}
+.combo-box  .list-view .list-cell:hover {
+    -fx-text-fill: #1F2D3A;
+    -fx-background-color:  #9E9E9E;
+    -fx-border-color: #1F2D3A;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.tree-table-view .column-header {
+    -fx-background-color: #9E9E9E;
+    -fx-border-color: #1F2D3A;
+    -fx-border-width: 5 5 5 5;
+
+}
+.tree-table-view .column-header .label {
+    -fx-text-fill: #1F2D3A;
+    -fx-font-size: 15px
+}
+.tree-table-view .column-header-background {
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 10 5 10 5;
+}
+.tree-table-view .tree-table-row-cell {
+    -fx-background-color: #1F2D3A;
+}
+/*.table-view .table-row-cell:hover {*/
+/*    -fx-background-color: blue;*/
+/*    -fx-text-background-color: yellow;*/
+/*}*/
+/*.tree-table-view .column {*/
+/*    -fx-background-size: 500;*/
+/*}*/
+.tree-table-view .column-header .arrow {
+    -fx-background-color:  #1F2D3A;
+}
+.chart-legend {
+    -fx-background-color: #ADB386;
+}
+.data0.chart-pie { -fx-pie-color: turquoise; }
+.data1.chart-pie { -fx-pie-color: aquamarine; }
+.data2.chart-pie { -fx-pie-color: cornflowerblue; }
+.data3.chart-pie { -fx-pie-color: blue; }
+.data4.chart-pie { -fx-pie-color: cadetblue; }
+#adminbtn:focused {
+    -fx-pref-width: 400;
+    -fx-pref-height: 200;
+}
+.table-view .column-header {
+    -fx-background-color: #9E9E9E;
+    -fx-border-color: #1F2D3A;
+    -fx-border-width: 5 5 5 5;
+
+}
+.table-view .column-header .label {
+    -fx-text-fill: #1F2D3A;
+    -fx-font-size: 15px
+}
+.table-view .column-header-background {
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 10 5 10 5;
+}
+.table-view .tree-table-row-cell {
+    -fx-background-color: #1F2D3A;
+}
+/*.table-view .table-row-cell:hover {*/
+/*    -fx-background-color: blue;*/
+/*    -fx-text-background-color: yellow;*/
+/*}*/
+/*.tree-table-view .column {*/
+/*    -fx-background-size: 500;*/
+/*}*/
+.table-view .column-header .arrow {
+    -fx-background-color:  #1F2D3A;
+}
